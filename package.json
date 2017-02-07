@@ -1,0 +1,10 @@
+{
+  "name": "vk-group-stats",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "thewizardplusplus <thewizardplusplus@yandex.ru>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thewizardplusplus/vk-group-stats.git"
+  }
+}
