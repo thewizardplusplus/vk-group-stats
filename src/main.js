@@ -1,4 +1,5 @@
 import express from 'express'
+import {logger} from './utils/logger'
 
 const app = express()
 app.get('/', (request, response) => {
@@ -7,5 +8,5 @@ app.get('/', (request, response) => {
 
 const port = process.env.VK_GROUP_STATS_PORT || 3000
 app.listen(port, () => {
-  console.log(`app listening on port ${port}`)
+  logger.info(`app listening on port ${port}`)
 })
