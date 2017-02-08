@@ -1,4 +1,5 @@
 import winston from 'winston'
+import morgan from 'morgan'
 
 export const logger = new winston.Logger({
   transports: [
@@ -19,4 +20,11 @@ export const logger = new winston.Logger({
     }),
   ],
   exitOnError: false,
+})
+export const http_logger = morgan('tiny', {
+  stream: {
+    write(message) {
+      logger.info(message.trim())
+    },
+  },
 })

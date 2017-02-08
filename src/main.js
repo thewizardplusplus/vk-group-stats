@@ -1,7 +1,8 @@
 import express from 'express'
-import {logger} from './utils/logger'
+import {logger, http_logger} from './utils/logger'
 
 const app = express()
+app.use(http_logger)
 app.get('/', (request, response) => {
   response.send('Hello, world!')
 })
