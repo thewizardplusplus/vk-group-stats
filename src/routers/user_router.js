@@ -1,3 +1,4 @@
+import {validate_request} from '../utils/errors'
 import express from 'express'
 
 function validate_request_body(request, response, next_handler) {
@@ -17,15 +18,7 @@ function validate_request_body(request, response, next_handler) {
     },
   })
 
-  request.getValidationResult().then(result => {
-    if (result.isEmpty()) {
-      next_handler()
-    } else {
-      response.status(400).json({
-        errors: result.array(),
-      })
-    }
-  })
+  validate_request(request, next_handler)
 }
 
 const all_users_router = express.Router()
@@ -46,15 +39,7 @@ one_user_router.param('user_id', (request, response, next_handler) => {
     .checkParams('user_id', 'parameter must be a MongoDB ObjectId')
     .isMongoId()
 
-  request.getValidationResult().then(result => {
-    if (result.isEmpty()) {
-      next_handler()
-    } else {
-      response.status(400).json({
-        errors: result.array(),
-      })
-    }
-  })
+  validate_request(request, next_handler)
 })
 one_user_router.route('/users/:user_id')
   .get((request, response) => {
