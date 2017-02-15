@@ -21,6 +21,9 @@ mongoose
     const app = express()
     app.use(http_logger)
     app.use(cookie_parser())
+    app.use(body_parser.urlencoded({
+      extended: true,
+    }))
     app.use(body_parser.json())
     app.use(express_validator())
     app.use(group_router)
