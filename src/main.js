@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import {logger, http_logger} from './utils/logger'
 import express from 'express'
+import cookie_parser from 'cookie-parser'
 import body_parser from 'body-parser'
 import express_validator from 'express-validator'
 import {group_router} from './routers/group_router'
@@ -19,6 +20,7 @@ mongoose
 
     const app = express()
     app.use(http_logger)
+    app.use(cookie_parser())
     app.use(body_parser.json())
     app.use(express_validator())
     app.use(group_router)
