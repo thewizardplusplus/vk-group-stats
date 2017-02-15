@@ -3,6 +3,7 @@ import {logger, http_logger} from './utils/logger'
 import express from 'express'
 import body_parser from 'body-parser'
 import express_validator from 'express-validator'
+import {group_router} from './routers/group_router'
 import {user_router} from './routers/user_router'
 import {error_handler} from './utils/errors'
 
@@ -20,6 +21,7 @@ mongoose
     app.use(http_logger)
     app.use(body_parser.json())
     app.use(express_validator())
+    app.use(group_router)
     app.use(user_router)
     app.use(error_handler)
 
