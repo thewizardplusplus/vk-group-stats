@@ -20,6 +20,16 @@ class error_response {
   }
 }
 
+export function check_authentication(request, response, next_handler) {
+  if (request.isAuthenticated()) {
+    next_handler()
+  } else {
+    next_handler(new error_response(401, [
+      new default_error(`authentication is required`),
+    ]))
+  }
+}
+
 export function validate_request(request, next_handler) {
   request.getValidationResult().then(result => {
     if (result.isEmpty()) {
