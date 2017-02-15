@@ -6,10 +6,12 @@ import body_parser from 'body-parser'
 import uuid_v4 from 'uuid/v4'
 import session from 'express-session'
 import session_store_generator from 'connect-mongo'
+import passport from 'passport'
 import express_validator from 'express-validator'
 import {group_router} from './routers/group_router'
 import {user_router} from './routers/user_router'
 import {error_handler} from './utils/errors'
+import {init_authentication} from './utils/authentication'
 
 mongoose.Promise = global.Promise
 mongoose
@@ -43,10 +45,14 @@ mongoose
         mongooseConnection: mongoose.connection,
       }),
     }))
+    app.use(passport.initialize())
+    app.use(passport.session())
     app.use(express_validator())
     app.use(group_router)
     app.use(user_router)
     app.use(error_handler)
+
+    init_authentication()
 
     const port = process.env.VK_GROUP_STATS_SERVER_PORT || 3000
     app.listen(port, () => {
