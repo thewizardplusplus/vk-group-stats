@@ -3,6 +3,9 @@ import {logger, http_logger} from './utils/logger'
 import express from 'express'
 import cookie_parser from 'cookie-parser'
 import body_parser from 'body-parser'
+import uuid_v4 from 'uuid/v4'
+import session from 'express-session'
+import session_store_generator from 'connect-mongo'
 import express_validator from 'express-validator'
 import {group_router} from './routers/group_router'
 import {user_router} from './routers/user_router'
@@ -20,11 +23,26 @@ mongoose
 
     const app = express()
     app.use(http_logger)
-    app.use(cookie_parser())
+
+    const session_secret = process.env.VK_GROUP_STATS_SECRET || uuid_v4()
+    app.use(cookie_parser(session_secret))
     app.use(body_parser.urlencoded({
       extended: true,
     }))
     app.use(body_parser.json())
+
+    const session_store = session_store_generator(session)
+    app.use(session({
+      cookie: {
+        secure: app.get('env') === 'production',
+      },
+      resave: false,
+      saveUninitialized: false,
+      secret: session_secret,
+      store: new session_store({
+        mongooseConnection: mongoose.connection,
+      }),
+    }))
     app.use(express_validator())
     app.use(group_router)
     app.use(user_router)
