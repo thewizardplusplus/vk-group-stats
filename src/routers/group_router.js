@@ -1,4 +1,4 @@
-import {validate_request} from '../utils/errors'
+import {check_authentication, validate_request} from '../utils/errors'
 import express from 'express'
 
 function validate_request_body(request, response, next_handler) {
@@ -15,10 +15,10 @@ function validate_request_body(request, response, next_handler) {
 
 const all_groups_router = express.Router()
 all_groups_router.route('/groups')
-  .get((request, response) => {
+  .get(check_authentication, (request, response) => {
     response.json({})
   })
-  .post(validate_request_body, (request, response) => {
+  .post(check_authentication, validate_request_body, (request, response) => {
     response.json({
       group: request.body,
     })
@@ -34,7 +34,7 @@ one_group_router.param('group_id', (request, response, next_handler) => {
   validate_request(request, next_handler)
 })
 one_group_router.route('/groups/:group_id')
-  .delete((request, response) => {
+  .delete(check_authentication, (request, response) => {
     response.json({
       group_id: request.params.group_id,
     })
