@@ -1,4 +1,5 @@
 import util from 'util'
+import {logger} from './logger'
 
 class default_error {
   constructor(message) {
@@ -52,6 +53,14 @@ export function error_handler(error, request, response, next_handler) {
       new default_error(`unknown error: ${util.inspect(error)}`),
     ])
   }
+
+  error.errors.forEach(error => {
+    if (error instanceof validation_error) {
+      logger.error(`"${error.field}" ${error.message}`)
+    } else {
+      logger.error(error.message)
+    }
+  })
 
   response.status(error.status).json({
     errors: error.errors,
