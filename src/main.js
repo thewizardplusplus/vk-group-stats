@@ -24,8 +24,10 @@ init_mongodb(() => {
   app.use(passport.session())
   app.use(express_validator())
   app.use(authentication_router)
-  app.use(group_router)
-  app.use(counter_router)
+
+  const base_api_endpoint = '/api/v1'
+  app.use(base_api_endpoint, group_router)
+  app.use(base_api_endpoint, counter_router)
   app.use(error_handler)
 
   init_authentication()
