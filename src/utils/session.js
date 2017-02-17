@@ -9,7 +9,7 @@ export const cookie_parser = cookie_parser_generator(session_secret)
 const session_store = session_store_generator(session_generator)
 export const session = session_generator({
   cookie: {
-    secure: process.env.NODE_ENV === 'production',
+    secure: process.env.VK_GROUP_STATS_SESSION_SECURE === 'TRUE',
   },
   resave: false,
   saveUninitialized: false,
