@@ -21,7 +21,9 @@ all_groups_router.route('/groups')
       .find({
         user_id: request.user.id,
       })
-      .then(groups => response.json(groups))
+      .then(groups => response.json({
+        data: groups,
+      }))
       .catch(next_handler)
   })
   .post(check_authentication, validate_request_body, (
@@ -34,7 +36,9 @@ all_groups_router.route('/groups')
         user_id: request.user.id,
         screen_name: request.body.screen_name,
       })
-      .then(group => response.json(group))
+      .then(group => response.json({
+        data: group,
+      }))
       .catch(next_handler)
   })
 
@@ -53,7 +57,9 @@ one_group_router.route('/groups/:group_id')
       .remove({
         _id: request.params.group_id,
       })
-      .then(() => response.json(true))
+      .then(() => response.json({
+        data: true,
+      }))
       .catch(next_handler)
   })
 

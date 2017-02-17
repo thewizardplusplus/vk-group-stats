@@ -38,7 +38,9 @@ all_counters_router.route('/groups/:group_id/counters')
       .sort({
         timestamp: 'descending',
       })
-      .then(counters => response.json(counters))
+      .then(counters => response.json({
+        data: counters,
+      }))
       .catch(next_handler)
   })
   .post(check_authentication, (request, response, next_handler) => {
@@ -47,7 +49,9 @@ all_counters_router.route('/groups/:group_id/counters')
         group_id: request.params.group_id,
         value: Math.round(1000 * Math.random()),
       })
-      .then(counter => response.json(counter))
+      .then(counter => response.json({
+        data: counter,
+      }))
       .catch(next_handler)
   })
   .delete(check_authentication, (request, response, next_handler) => {
@@ -55,7 +59,9 @@ all_counters_router.route('/groups/:group_id/counters')
       .remove({
         group_id: request.params.group_id,
       })
-      .then(() => response.json(true))
+      .then(() => response.json({
+        data: true,
+      }))
       .catch(next_handler)
   })
 
