@@ -6,6 +6,7 @@ import passport from 'passport'
 import express_validator from 'express-validator'
 import {authentication_router} from './routers/authentication_router'
 import {group_router} from './routers/group_router'
+import {counter_router} from './routers/counter_router'
 import {user_router} from './routers/user_router'
 import {error_handler} from './utils/errors'
 import {init_authentication} from './utils/authentication'
@@ -25,6 +26,7 @@ init_mongodb(() => {
   app.use(express_validator())
   app.use(authentication_router)
   app.use(group_router)
+  app.use(counter_router)
   app.use(user_router)
   app.use(error_handler)
 
