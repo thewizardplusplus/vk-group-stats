@@ -1,5 +1,5 @@
 import express from 'express'
-import {validate_request} from '../utils/errors'
+import {check_authentication, validate_request} from '../utils/errors'
 import {counter_model} from '../models/counter_model'
 
 const all_counters_router = express.Router()
@@ -12,7 +12,7 @@ all_counters_router.param('group_id', (request, response, next_handler) => {
   validate_request(request, next_handler)
 })
 all_counters_router.route('/groups/:group_id/counters')
-  .get((request, response, next_handler) => {
+  .get(check_authentication, (request, response, next_handler) => {
     request
       .checkQuery(
         'start_timestamp',
@@ -41,7 +41,7 @@ all_counters_router.route('/groups/:group_id/counters')
       .then(counters => response.json(counters))
       .catch(next_handler)
   })
-  .post((request, response, next_handler) => {
+  .post(check_authentication, (request, response, next_handler) => {
     counter_model
       .create({
         group_id: request.params.group_id,
@@ -50,7 +50,7 @@ all_counters_router.route('/groups/:group_id/counters')
       .then(counter => response.json(counter))
       .catch(next_handler)
   })
-  .delete((request, response, next_handler) => {
+  .delete(check_authentication, (request, response, next_handler) => {
     counter_model
       .remove({
         group_id: request.params.group_id,
