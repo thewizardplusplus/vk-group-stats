@@ -8,6 +8,7 @@
     "url": "https://github.com/thewizardplusplus/vk-group-stats.git"
   },
   "dependencies": {
+    "async": "^2.1.4",
     "body-parser": "^1.16.0",
     "connect-mongo": "^1.3.2",
     "cookie-parser": "^1.4.3",
