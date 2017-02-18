@@ -1,11 +1,8 @@
 import {logger} from './logger'
 import {group_model} from '../models/group_model'
-import each_series from 'async/eachSeries'
+import each from 'async/each'
 import util from 'util'
 import scheduler from 'node-schedule'
-
-const vk_api_request_frequency = 3
-const vk_api_request_period_error = 100
 
 export function init_scheduler() {
   scheduler.scheduleJob(
@@ -17,21 +14,17 @@ export function init_scheduler() {
       group_model
         .find({})
         .then(groups => {
-          each_series(groups, (group, next_handler) => {
-            setTimeout(() => {
-              group.update_counter(error => {
-                if (error !== null) {
-                  logger.error(
-                    `group ${group.id} can't update its counter: `
-                      + util.inspect(error)
-                  )
-                }
+          each(groups, (group, done_handler) => {
+            group.update_counter(error => {
+              if (error !== null) {
+                logger.error(
+                  `group ${group.id} can't update its counter: `
+                    + util.inspect(error)
+                )
+              }
 
-                next_handler()
-              })
-            }, Math.round(
-              1000 / vk_api_request_frequency + vk_api_request_period_error
-            ))
+              done_handler()
+            })
           }, () => {
             logger.info('finish a groups counters update')
           })
