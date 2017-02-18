@@ -9,6 +9,7 @@ import {group_router} from './routers/group_router'
 import {counter_router} from './routers/counter_router'
 import {error_handler} from './utils/errors'
 import {init_authentication} from './utils/authentication'
+import {init_scheduler} from './utils/scheduler'
 import {init_mongodb} from './utils/mongodb'
 
 init_mongodb(() => {
@@ -31,6 +32,7 @@ init_mongodb(() => {
   app.use(error_handler)
 
   init_authentication()
+  init_scheduler()
 
   const port = process.env.VK_GROUP_STATS_SERVER_PORT || 3000
   app.listen(port, () => {
