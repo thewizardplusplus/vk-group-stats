@@ -49,6 +49,7 @@ $ npm start
 
 Environment variables:
 
+* `NODE_ENV` &mdash; the current environment (allowed: `production`);
 * `VK_GROUP_STATS_SERVER_PORT` &mdash; the server port (default: 4000);
 * `VK_GROUP_STATS_MONGODB_HOST` &mdash; the MongoDB host (default: `localhost`);
 * `VK_GROUP_STATS_MONGODB_DATABASE` &mdash; the MongoDB database (default: `vk-group-stats`);

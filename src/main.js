@@ -27,6 +27,9 @@ init_mongodb(() => {
     app.use(passport.session())
     app.use(express_validator())
     app.use(authentication_router)
+    if (process.env.NODE_ENV === 'production') {
+      app.use(express.static('client/build'))
+    }
 
     const base_api_endpoint = '/api/v1'
     app.use(base_api_endpoint, group_router)
