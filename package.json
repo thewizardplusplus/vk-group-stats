@@ -28,12 +28,22 @@
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-polyfill": "^6.22.0",
-    "babel-preset-env": "^1.1.8"
+    "babel-preset-env": "^1.1.8",
+    "concurrently": "^3.3.0",
+    "nodemon": "^1.11.0"
   },
   "scripts": {
-    "build": "babel -Dd dist src",
-    "prestart": "npm run build",
-    "start": "node dist/main.js"
+    "install-server": "npm install",
+    "install-client": "cd client && npm install",
+    "install-all": "npm run install-server && npm run install-client",
+    "build-server": "babel --out-dir=dist src",
+    "build-client": "cd client && npm run build",
+    "build": "npm run build-server && npm run build-client",
+    "serve": "node dist/main.js",
+    "server-up": "npm run install-all && npm run build && npm run serve",
+    "start-server": "nodemon --exec babel-node src/main.js",
+    "start-client": "cd client && npm run start",
+    "start": "concurrently 'npm run start-server' 'npm run start-client'"
   },
   "babel": {
     "presets": [
