@@ -36,7 +36,7 @@ init_mongodb(() => {
     init_authentication()
     init_scheduler()
 
-    const port = process.env.VK_GROUP_STATS_SERVER_PORT || 3000
+    const port = process.env.VK_GROUP_STATS_SERVER_PORT || 4000
     app.listen(port, () => {
       logger.info(`app listening on port ${port}`)
     })

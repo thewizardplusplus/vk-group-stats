@@ -49,7 +49,7 @@ $ npm start
 
 Environment variables:
 
-* `VK_GROUP_STATS_SERVER_PORT` &mdash; the server port (default: 3000);
+* `VK_GROUP_STATS_SERVER_PORT` &mdash; the server port (default: 4000);
 * `VK_GROUP_STATS_MONGODB_HOST` &mdash; the MongoDB host (default: `localhost`);
 * `VK_GROUP_STATS_MONGODB_DATABASE` &mdash; the MongoDB database (default: `vk-group-stats`);
 * `VK_GROUP_STATS_MONGODB_PORT` &mdash; the MongoDB port (default: 27017);
@@ -57,7 +57,7 @@ Environment variables:
 * `VK_GROUP_STATS_SESSION_SECRET` &mdash; the sessions secret (default: a random UUID v4);
 * `VK_GROUP_STATS_VK_APP_ID` &mdash; the [VK](http://vk.com/) app ID (default: 5878021);
 * `VK_GROUP_STATS_VK_APP_SECRET` &mdash; the [VK](http://vk.com/) app secret;
-* `VK_GROUP_STATS_VK_APP_CALLBACK` &mdash; the [VK](http://vk.com/) app callback for an authentication (default: `http://localhost:3000/authentication/vk/callback`);
+* `VK_GROUP_STATS_VK_APP_CALLBACK` &mdash; the [VK](http://vk.com/) app callback for an authentication (default: `http://localhost:4000/authentication/vk/callback`);
 * `VK_GROUP_STATS_SCHEDULING` &mdash; scheduling settings (use the cron utility format; default: `0 0 * * *`, i.e. once every day).
 
 ## API

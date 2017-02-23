@@ -8,7 +8,7 @@ export function init_authentication() {
     clientID: process.env.VK_GROUP_STATS_VK_APP_ID || 5878021,
     clientSecret: process.env.VK_GROUP_STATS_VK_APP_SECRET,
     callbackURL: process.env.VK_GROUP_STATS_VK_APP_CALLBACK
-      || 'http://localhost:3000/authentication/vk/callback',
+      || 'http://localhost:4000/authentication/vk/callback',
   }, (access_token, refresh_token, parameters, profile, done_handler) => {
     const query = {
       vk_id: profile.id,
