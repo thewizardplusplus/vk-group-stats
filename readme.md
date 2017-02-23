@@ -7,7 +7,8 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
 * ECMAScript 2015;
 * Node.js;
 * Express;
-* MongoDB.
+* MongoDB;
+* React.
 
 ## Features
 
