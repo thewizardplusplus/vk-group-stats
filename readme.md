@@ -8,7 +8,8 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
 * Node.js;
 * Express;
 * MongoDB;
-* React.
+* React;
+* Material-UI.
 
 ## Features
 
