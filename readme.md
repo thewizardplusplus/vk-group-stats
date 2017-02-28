@@ -5,11 +5,14 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
 ## Technologies
 
 * ECMAScript 2015;
-* Node.js;
-* Express;
-* MongoDB;
-* React;
-* Material-UI.
+* back-end:
+    * Node.js;
+    * Express;
+    * MongoDB;
+* front-end:
+    * Redux;
+    * React;
+    * Material-UI.
 
 ## Features
 
