@@ -19,6 +19,7 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
         * MongoDB ObjectId;
         * [VK](http://vk.com/) ID;
     * operations:
+        * getting of a current user;
         * automatically addition on an authentication;
 * groups:
     * data:
@@ -91,6 +92,10 @@ API description in the [Swagger](http://swagger.io/) format: [docs/api.yaml](doc
 ![DELETE /groups/{group_id}/counters](screenshots/screenshot_05.png)
 
 `DELETE /groups/{group_id}/counters`
+
+![GET /users/me](screenshots/screenshot_06.png)
+
+`GET /users/me`
 
 ## License
 

@@ -7,6 +7,7 @@ import express_validator from 'express-validator'
 import {authentication_router} from './routers/authentication_router'
 import {group_router} from './routers/group_router'
 import {counter_router} from './routers/counter_router'
+import {user_router} from './routers/user_router'
 import {error_handler} from './utils/errors'
 import {init_authentication} from './utils/authentication'
 import {init_scheduler} from './utils/scheduler'
@@ -34,6 +35,7 @@ init_mongodb(() => {
     const base_api_endpoint = '/api/v1'
     app.use(base_api_endpoint, group_router)
     app.use(base_api_endpoint, counter_router)
+    app.use(base_api_endpoint, user_router)
     app.use(error_handler)
 
     init_authentication()

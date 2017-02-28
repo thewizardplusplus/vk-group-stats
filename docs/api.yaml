@@ -151,6 +151,22 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/error'
+  /users/me:
+    get:
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/user'
+            required:
+            - data
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/error'
 parameters:
   group_id:
     name: group_id
@@ -213,6 +229,18 @@ definitions:
     - group_id
     - timestamp
     - value
+  user:
+    type: object
+    description: may be null
+    properties:
+      _id:
+        $ref: '#/definitions/mongodb-objectid'
+      vk_id:
+        type: integer
+        minimum: 0
+    required:
+    - _id
+    - vk_id
   ok:
     type: object
     properties:
