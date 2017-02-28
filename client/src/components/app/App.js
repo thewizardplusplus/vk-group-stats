@@ -1,5 +1,6 @@
 import React from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import Icon from '../icon/Icon'
 import './app.css'
 
 export default class App extends React.Component {
@@ -11,7 +12,7 @@ export default class App extends React.Component {
             <h2>Статистика сообществ ВКонтакте</h2>
           </div>
           <p className="app-intro">
-            Hello, world!
+            Hello, world! <Icon name="cake" />
           </p>
         </div>
       </MuiThemeProvider>
