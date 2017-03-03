@@ -4,6 +4,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
 import Icon from '../icon/Icon'
+import Loading from '../loading/Loading'
 import './app.css'
 
 export default class App extends React.Component {
@@ -18,6 +19,7 @@ export default class App extends React.Component {
           <p className="app-intro">
             Hello, world! <Icon name="cake" />
           </p>
+          <Loading />
         </div>
       </MuiThemeProvider>
     )
