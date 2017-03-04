@@ -16,7 +16,9 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
 
 ## Features
 
-* an authentication via [VK](http://vk.com/);
+* authentication:
+    * an authentication via [VK](http://vk.com/);
+    * support of a skipping of an authentication;
 * users:
     * data:
         * MongoDB ObjectId;
@@ -24,6 +26,7 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
     * operations:
         * getting of a current user;
         * automatically addition on an authentication;
+    * support of a fake user on a skipping of an authentication;
 * groups:
     * data:
         * MongoDB ObjectId;
@@ -64,6 +67,7 @@ Environment variables:
 * `VK_GROUP_STATS_VK_APP_ID` &mdash; the [VK](http://vk.com/) app ID (default: 5878021);
 * `VK_GROUP_STATS_VK_APP_SECRET` &mdash; the [VK](http://vk.com/) app secret;
 * `VK_GROUP_STATS_VK_APP_CALLBACK` &mdash; the [VK](http://vk.com/) app callback for an authentication (default: `http://localhost:4000/authentication/vk/callback`);
+* `VK_GROUP_STATS_SKIP_AUTHENTICATION` &mdash; skip an authentication (`TRUE` to a skip);
 * `VK_GROUP_STATS_SCHEDULING` &mdash; scheduling settings (use the cron utility format; default: `0 0 * * *`, i.e. once every day).
 
 ## API

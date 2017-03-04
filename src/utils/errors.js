@@ -22,7 +22,10 @@ class error_response {
 }
 
 export function check_authentication(request, response, next_handler) {
-  if (request.isAuthenticated()) {
+  if (
+    request.isAuthenticated()
+    || process.env.VK_GROUP_STATS_SKIP_AUTHENTICATION === 'TRUE'
+  ) {
     next_handler()
   } else {
     next_handler(new error_response(401, [

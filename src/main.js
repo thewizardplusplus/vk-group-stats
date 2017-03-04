@@ -9,7 +9,7 @@ import {group_router} from './routers/group_router'
 import {counter_router} from './routers/counter_router'
 import {user_router} from './routers/user_router'
 import {error_handler} from './utils/errors'
-import {init_authentication} from './utils/authentication'
+import {init_authentication, fake_authentication} from './utils/authentication'
 import {init_scheduler} from './utils/scheduler'
 import util from 'util'
 import {init_mongodb} from './utils/mongodb'
@@ -28,6 +28,9 @@ init_mongodb(() => {
     app.use(passport.session())
     app.use(express_validator())
     app.use(authentication_router)
+    if (process.env.VK_GROUP_STATS_SKIP_AUTHENTICATION === 'TRUE') {
+      app.use(fake_authentication)
+    }
     if (process.env.NODE_ENV === 'production') {
       app.use(express.static('client/build'))
     }

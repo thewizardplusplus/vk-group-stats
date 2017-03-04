@@ -2,6 +2,7 @@ import vk_strategy from 'passport-vkontakte'
 import {user_model} from '../models/user_model'
 import {logger} from './logger'
 import passport from 'passport'
+import mongoose from 'mongoose'
 
 export function init_authentication() {
   passport.use(new vk_strategy.Strategy({
@@ -32,4 +33,13 @@ export function init_authentication() {
       .then(user => done_handler(null, user))
       .catch(done_handler)
   })
+}
+
+const fake_user = new user_model({
+  _id: mongoose.Types.ObjectId('507f1f77bcf86cd799439011'),
+  vk_id: 0,
+})
+export function fake_authentication(request, response, next_handler) {
+  request.user = fake_user
+  next_handler()
 }
