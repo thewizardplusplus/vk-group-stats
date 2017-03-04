@@ -1,0 +1,70 @@
+{
+  "type": "object",
+  "properties": {
+    "groups": {
+      "type": "object",
+      "properties": {
+        "isFetching": {
+          "type": "boolean"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/group"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/error"
+          }
+        }
+      },
+      "required": [
+        "isFetching",
+        "items",
+        "errors"
+      ]
+    }
+  },
+  "required": [
+    "groups"
+  ],
+  "definitions": {
+    "group": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "$ref": "#/definitions/mongodb-objectid"
+        },
+        "screen_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "_id",
+        "screen_name"
+      ]
+    },
+    "error": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "field": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ]
+    },
+    "mongodb-objectid": {
+      "type": "string",
+      "pattern": "^[0-9A-Fa-f]+$",
+      "minLength": 24,
+      "maxLength": 24
+    }
+  }
+}
