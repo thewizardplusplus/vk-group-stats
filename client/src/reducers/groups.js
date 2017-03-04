@@ -4,20 +4,18 @@ import {handleActions} from 'redux-actions'
 export const groups = handleActions({
   [GROUPS_REQUEST]: (state, action) => ({
     ...state,
-    isFetching: true,
+    state: 'fetching',
   }),
   [GROUPS_SUCCESS]: (state, action) => ({
     ...state,
-    isFetching: false,
+    state: 'success',
     items: action.payload,
   }),
   [GROUPS_FAILURE]: (state, action) => ({
     ...state,
-    isFetching: false,
-    errors: action.payload,
+    state: 'failure',
   }),
 }, {
-  isFetching: false,
-  items: [],
-  errors: [],
+  state: 'success',
+  items: []
 })

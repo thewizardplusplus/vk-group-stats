@@ -1,4 +1,5 @@
 import {createAction} from 'redux-actions'
+import logError from './logger'
 
 export const GROUPS_REQUEST = 'GROUPS_REQUEST'
 export const GROUPS_SUCCESS = 'GROUPS_SUCCESS'
@@ -17,13 +18,15 @@ export function fetchGroups() {
         if (typeof json.data !== 'undefined') {
           dispatch(groupsSuccess(json.data))
         } else if (typeof json.errors !== 'undefined') {
-          dispatch(groupsFailure(json.errors))
+          json.errors.forEach(logError)
+          dispatch(groupsFailure())
         } else {
           throw new Error('API response is incorrect')
         }
       })
-      .catch(error => dispatch(groupsFailure([{
-        message: error.message,
-      }])))
+      .catch(error => {
+        logError(error)
+        dispatch(groupsFailure())
+      })
   }
 }

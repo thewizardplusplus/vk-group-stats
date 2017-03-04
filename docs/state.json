@@ -4,26 +4,25 @@
     "groups": {
       "type": "object",
       "properties": {
-        "isFetching": {
-          "type": "boolean"
+        "state": {
+          "type": "string",
+          "enum": [
+            "fetching",
+            "success",
+            "failure"
+          ],
+          "default": "success"
         },
         "items": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/group"
           }
-        },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/error"
-          }
         }
       },
       "required": [
-        "isFetching",
-        "items",
-        "errors"
+        "state",
+        "items"
       ]
     }
   },
@@ -44,20 +43,6 @@
       "required": [
         "_id",
         "screen_name"
-      ]
-    },
-    "error": {
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        },
-        "field": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message"
       ]
     },
     "mongodb-objectid": {
