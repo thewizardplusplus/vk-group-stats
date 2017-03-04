@@ -4,7 +4,6 @@ import configureStore from './store/configure_store'
 import Root from './containers/root/Root'
 import ReactDOM from 'react-dom'
 import {fetchGroups} from './actions/groups'
-import './index.css'
 
 // needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
