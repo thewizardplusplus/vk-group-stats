@@ -1,5 +1,5 @@
 import React from 'react'
-import Loading from '../loading/Loading'
+import LoadingBlock from '../loading_block/LoadingBlock'
 import GroupList from '../group_list/GroupList'
 import ErrorBlock from '../error_block/ErrorBlock'
 
@@ -20,7 +20,7 @@ export default class StatefulGroupList extends React.Component {
   render() {
     switch (this.props.state) {
     case 'fetching':
-      return <Loading />
+      return <LoadingBlock />
     case 'success':
       return <GroupList groups={this.props.groups} />
     case 'failure':
