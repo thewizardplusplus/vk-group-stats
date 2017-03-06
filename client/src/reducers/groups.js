@@ -1,21 +1,22 @@
 import {GROUPS_REQUEST, GROUPS_SUCCESS, GROUPS_FAILURE} from '../actions/groups'
+import {FETCHING_STATE, SUCCESS_STATE, FAILURE_STATE} from '../common/states'
 import {handleActions} from 'redux-actions'
 
 export const groups = handleActions({
   [GROUPS_REQUEST]: (state, action) => ({
     ...state,
-    state: 'fetching',
+    state: FETCHING_STATE,
   }),
   [GROUPS_SUCCESS]: (state, action) => ({
     ...state,
-    state: 'success',
+    state: SUCCESS_STATE,
     items: action.payload,
   }),
   [GROUPS_FAILURE]: (state, action) => ({
     ...state,
-    state: 'failure',
+    state: FAILURE_STATE,
   }),
 }, {
-  state: 'success',
+  state: SUCCESS_STATE,
   items: []
 })

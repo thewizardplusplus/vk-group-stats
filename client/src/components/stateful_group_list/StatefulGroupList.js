@@ -1,11 +1,11 @@
 import React from 'react'
-import LoadingBlock from '../loading_block/LoadingBlock'
+import {ALL_STATES} from '../../common/states'
+import StatefulBlock from '../stateful_block/StatefulBlock'
 import GroupList from '../group_list/GroupList'
-import ErrorBlock from '../error_block/ErrorBlock'
 
 export default class StatefulGroupList extends React.Component {
   static propTypes = {
-    state: React.PropTypes.oneOf(['fetching', 'success', 'failure']),
+    state: React.PropTypes.oneOf(ALL_STATES).isRequired,
     groups: React.PropTypes.arrayOf(React.PropTypes.shape({
       _id: React.PropTypes.string.isRequired,
       screen_name: React.PropTypes.string.isRequired,
@@ -18,15 +18,8 @@ export default class StatefulGroupList extends React.Component {
   }
 
   render() {
-    switch (this.props.state) {
-    case 'fetching':
-      return <LoadingBlock />
-    case 'success':
-      return <GroupList groups={this.props.groups} />
-    case 'failure':
-      return <ErrorBlock />
-    default:
-      return null
-    }
+    return <StatefulBlock state={this.props.state}>
+      <GroupList groups={this.props.groups} />
+    </StatefulBlock>
   }
 }
