@@ -1,11 +1,13 @@
 import React from 'react'
-import {Card, CardHeader, CardText} from 'material-ui/Card'
+import {Card, CardHeader, CardText, CardActions} from 'material-ui/Card'
+import IconButton from '../icon_button/IconButton'
 
 export default class Group extends React.Component {
   static propTypes = {
     group: React.PropTypes.shape({
       screen_name: React.PropTypes.string.isRequired,
     }).isRequired,
+    onRemove: React.PropTypes.func.isRequired,
   }
 
   render() {
@@ -14,6 +16,12 @@ export default class Group extends React.Component {
       <CardText>
         Dump text.
       </CardText>
+      <CardActions>
+        <IconButton
+          icon="delete"
+          text="Удалить"
+          onClick={this.props.onRemove} />
+      </CardActions>
     </Card>
   }
 }

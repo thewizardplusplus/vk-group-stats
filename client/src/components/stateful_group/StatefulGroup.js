@@ -9,11 +9,12 @@ export default class StatefulGroup extends React.Component {
     group: React.PropTypes.shape({
       screen_name: React.PropTypes.string.isRequired,
     }).isRequired,
+    onRemove: React.PropTypes.func.isRequired,
   }
 
   render() {
     return <StatefulBlock state={this.props.state}>
-      <Group group={this.props.group} />
+      <Group group={this.props.group} onRemove={this.props.onRemove} />
     </StatefulBlock>
   }
 }

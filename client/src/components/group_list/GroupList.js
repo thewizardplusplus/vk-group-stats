@@ -12,13 +12,17 @@ export default class GroupList extends React.Component {
         screen_name: React.PropTypes.string.isRequired,
       }).isRequired,
     })).isRequired,
+    onGroupRemove: React.PropTypes.func.isRequired,
   }
 
   render() {
     return <List>
       {this.props.groups.map(group => {
         return <ListItem key={group.data._id}>
-          <StatefulGroup state={group.state} group={group.data} />
+          <StatefulGroup
+            state={group.state}
+            group={group.data}
+            onRemove={() => this.props.onGroupRemove(group.data._id)} />
         </ListItem>
       })}
     </List>
