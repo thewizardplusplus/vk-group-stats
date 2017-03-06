@@ -10,7 +10,10 @@ export const groups = handleActions({
   [GROUPS_SUCCESS]: (state, action) => ({
     ...state,
     state: SUCCESS_STATE,
-    items: action.payload,
+    items: action.payload.map(group => ({
+      state: SUCCESS_STATE,
+      data: group,
+    })),
   }),
   [GROUPS_FAILURE]: (state, action) => ({
     ...state,
