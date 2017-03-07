@@ -5,6 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import {DrivedMainMenu} from '../../containers/drived_main_menu/DrivedMainMenu'
 import AppBar from 'material-ui/AppBar'
 import {DrivedGroupList} from '../../containers/drived_group_list/DrivedGroupList'
+import {DrivedGroupDialog} from '../../containers/drived_group_dialog/DrivedGroupDialog'
 import './app.css'
 
 export default class App extends React.Component {
@@ -17,6 +18,9 @@ export default class App extends React.Component {
             showMenuIconButton={false}
             iconElementRight={<DrivedMainMenu />} />
           <DrivedGroupList />
+          <DrivedGroupDialog>
+            Dump text.
+          </DrivedGroupDialog>
         </div>
       </MuiThemeProvider>
     )
