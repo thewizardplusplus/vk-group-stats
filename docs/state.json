@@ -1,6 +1,17 @@
 {
   "type": "object",
   "properties": {
+    "groupDialog": {
+      "type": "object",
+      "properties": {
+        "open": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "open"
+      ]
+    },
     "groups": {
       "type": "object",
       "properties": {
@@ -33,6 +44,7 @@
     }
   },
   "required": [
+    "groupDialog",
     "groups"
   ],
   "definitions": {
