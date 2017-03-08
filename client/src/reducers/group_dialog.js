@@ -1,4 +1,4 @@
-import {GROUP_DIALOG_OPEN, GROUP_DIALOG_REJECT} from '../actions/group_dialog'
+import {GROUP_DIALOG_OPEN, GROUP_DIALOG_CLOSE} from '../actions/group_dialog'
 import {handleActions} from 'redux-actions'
 
 export const groupDialog = handleActions({
@@ -6,7 +6,7 @@ export const groupDialog = handleActions({
     ...state,
     open: true,
   }),
-  [GROUP_DIALOG_REJECT]: (state, action) => ({
+  [GROUP_DIALOG_CLOSE]: (state, action) => ({
     ...state,
     open: false,
   }),

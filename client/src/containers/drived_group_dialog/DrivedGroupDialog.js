@@ -1,4 +1,4 @@
-import {groupDialogReject} from '../../actions/group_dialog'
+import {groupDialogClose} from '../../actions/group_dialog'
 import {connect} from 'react-redux'
 import GroupDialog from '../../components/group_dialog/GroupDialog'
 
@@ -10,8 +10,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onReject() {
-      dispatch(groupDialogReject())
+    onClose() {
+      dispatch(groupDialogClose())
     },
     onAccept() {
       console.log('not yet implemented')
