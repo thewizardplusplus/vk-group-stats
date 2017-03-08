@@ -1,4 +1,5 @@
 import {groupDialogClose} from '../../actions/group_dialog'
+import {addGroup} from '../../actions/group_add'
 import {connect} from 'react-redux'
 import GroupDialog from '../../components/group_dialog/GroupDialog'
 
@@ -13,8 +14,8 @@ function mapDispatchToProps(dispatch) {
     onClose() {
       dispatch(groupDialogClose())
     },
-    onAccept() {
-      console.log('not yet implemented')
+    onAccept(screenName) {
+      dispatch(addGroup(screenName))
     }
   }
 }
