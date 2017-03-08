@@ -1,6 +1,6 @@
 import {GROUPS_REQUEST, GROUPS_SUCCESS, GROUPS_FAILURE} from '../actions/groups'
 import {FETCHING_STATE, SUCCESS_STATE, FAILURE_STATE} from '../common/states'
-import {initialGroupsState} from './initial_groups_state'
+import {initialGroupsState} from './common'
 import {handleActions} from 'redux-actions'
 
 export const groups = handleActions({

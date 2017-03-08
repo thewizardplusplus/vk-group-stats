@@ -1,16 +1,7 @@
 import {GROUP_REMOVE_REQUEST, GROUP_REMOVE_SUCCESS, GROUP_REMOVE_FAILURE} from '../actions/group_remove'
 import {FETCHING_STATE, FAILURE_STATE} from '../common/states'
-import {initialGroupsState} from './initial_groups_state'
+import {setGroupState, initialGroupsState} from './common'
 import {handleActions} from 'redux-actions'
-
-function setGroupState(groups, group_id, group_state) {
-  return groups.map(group => {
-    return group.data._id !== group_id ? group : {
-      ...group,
-      state: group_state,
-    }
-  })
-}
 
 export const groupRemove = handleActions({
   [GROUP_REMOVE_REQUEST]: (state, action) => ({
