@@ -16,43 +16,71 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
 
 ## Features
 
-* authentication:
-    * an authentication via [VK](http://vk.com/);
-    * support of a skipping of an authentication;
-* users:
-    * data:
-        * MongoDB ObjectId;
-        * [VK](http://vk.com/) ID;
-    * operations:
-        * getting of a current user;
-        * automatically addition on an authentication;
-    * support of a fake user on a skipping of an authentication;
-* groups:
-    * data:
-        * MongoDB ObjectId;
-        * user ObjectId;
-        * [VK](http://vk.com/) screen name;
-    * operations (for a current user):
-        * getting of all;
-        * addition of one;
-        * deletion of one;
-* counters:
-    * data:
-        * MongoDB ObjectId;
-        * group ObjectId;
-        * addition timestamp;
-        * group members counter;
-    * operations (for a specified group):
-        * getting of all in a descending order;
-        * getting of all in a descending order beginning with a specified timestamp;
-        * addition of one (automatically via [VK](http://vk.com/) API);
-        * deletion of all;
-* automatically addition of counters via [VK](http://vk.com/) API for all added groups by schedule.
+* back-end:
+    * authentication:
+        * an authentication via [VK](http://vk.com/);
+        * support of a skipping of an authentication;
+    * users:
+        * data:
+            * MongoDB ObjectId;
+            * [VK](http://vk.com/) ID;
+        * operations:
+            * getting of a current user;
+            * automatically addition on an authentication;
+        * support of a fake user on a skipping of an authentication;
+    * groups:
+        * data:
+            * MongoDB ObjectId;
+            * user ObjectId;
+            * [VK](http://vk.com/) screen name;
+        * operations (for a current user):
+            * getting of all;
+            * addition of one;
+            * deletion of one;
+    * counters:
+        * data:
+            * MongoDB ObjectId;
+            * group ObjectId;
+            * addition timestamp;
+            * group members counter;
+        * operations (for a specified group):
+            * getting of all in a descending order;
+            * getting of all in a descending order beginning with a specified timestamp;
+            * addition of one (automatically via [VK](http://vk.com/) API);
+            * deletion of all;
+    * automatically addition of counters via [VK](http://vk.com/) API for all added groups by schedule;
+* front-end:
+    * design:
+        * adaptive;
+        * material;
+    * group list:
+        * displays:
+            * groups;
+        * states:
+            * fetching;
+            * success;
+            * failure;
+        * for every group:
+            * displays:
+                * [VK](http://vk.com/) screen name;
+            * states:
+                * fetching;
+                * success;
+                * failure;
+    * add group dialog.
 
 ## Usage
 
+In a development:
+
 ```
 $ npm start
+```
+
+In a production:
+
+```
+$ npm server-up
 ```
 
 Environment variables:
@@ -73,6 +101,10 @@ Environment variables:
 ## API
 
 API description in the [Swagger](http://swagger.io/) format: [docs/api.yaml](docs/api.yaml).
+
+## Redux state
+
+Redux state in the JSON Schema format: [docs/state.json](docs/state.json).
 
 ## Screenshots
 
