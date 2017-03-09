@@ -108,33 +108,25 @@ Redux state in the JSON Schema format: [docs/state.json](docs/state.json).
 
 ## Screenshots
 
-![GET /groups](screenshots/screenshot_00.png)
+![Group list](screenshots/screenshot_07.png)
 
-`GET /groups`
+Group list
 
-![POST /groups](screenshots/screenshot_01.png)
+![Fetching state](screenshots/screenshot_08.png)
 
-`POST /groups`
+Fetching state
 
-![DELETE /groups/{group_id}](screenshots/screenshot_02.png)
+![Failure state](screenshots/screenshot_09.png)
 
-`DELETE /groups/{group_id}`
+Failure state
 
-![GET /groups/{group_id}/counters](screenshots/screenshot_03.png)
+![Add group dialog](screenshots/screenshot_10.png)
 
-`GET /groups/{group_id}/counters`
+Add group dialog
 
-![POST /groups/{group_id}/counters](screenshots/screenshot_04.png)
+![Main menu](screenshots/screenshot_11.png)
 
-`POST /groups/{group_id}/counters`
-
-![DELETE /groups/{group_id}/counters](screenshots/screenshot_05.png)
-
-`DELETE /groups/{group_id}/counters`
-
-![GET /users/me](screenshots/screenshot_06.png)
-
-`GET /users/me`
+Main menu
 
 ## License
 
