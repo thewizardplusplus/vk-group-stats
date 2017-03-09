@@ -12,6 +12,7 @@ export default class GroupList extends React.Component {
         screen_name: React.PropTypes.string.isRequired,
       }).isRequired,
     })).isRequired,
+    onGroupUpdate: React.PropTypes.func.isRequired,
     onGroupRemove: React.PropTypes.func.isRequired,
   }
 
@@ -22,6 +23,7 @@ export default class GroupList extends React.Component {
           <StatefulGroup
             state={group.state}
             group={group.data}
+            onUpdate={() => this.props.onGroupUpdate(group.data._id)}
             onRemove={() => this.props.onGroupRemove(group.data._id)} />
         </ListItem>
       })}

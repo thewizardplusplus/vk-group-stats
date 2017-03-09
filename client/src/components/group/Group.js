@@ -9,6 +9,7 @@ export default class Group extends React.Component {
       _id: React.PropTypes.string.isRequired,
       screen_name: React.PropTypes.string.isRequired,
     }).isRequired,
+    onUpdate: React.PropTypes.func.isRequired,
     onRemove: React.PropTypes.func.isRequired,
   }
 
@@ -19,6 +20,10 @@ export default class Group extends React.Component {
         <DrivedCountersTable groupId={this.props.group._id} />
       </CardText>
       <CardActions>
+        <IconButton
+          icon="update"
+          text="Обновить"
+          onClick={this.props.onUpdate} />
         <IconButton
           icon="delete"
           text="Удалить"

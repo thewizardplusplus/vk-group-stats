@@ -14,6 +14,7 @@ export default class StatefulGroupList extends React.Component {
       }).isRequired,
     })).isRequired,
     onMount: React.PropTypes.func.isRequired,
+    onGroupUpdate: React.PropTypes.func.isRequired,
     onGroupRemove: React.PropTypes.func.isRequired,
   }
 
@@ -25,6 +26,7 @@ export default class StatefulGroupList extends React.Component {
     return <StatefulBlock state={this.props.state}>
       <GroupList
         groups={this.props.groups}
+        onGroupUpdate={this.props.onGroupUpdate}
         onGroupRemove={this.props.onGroupRemove} />
     </StatefulBlock>
   }
