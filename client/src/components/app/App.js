@@ -18,9 +18,7 @@ export default class App extends React.Component {
             showMenuIconButton={false}
             iconElementRight={<DrivedMainMenu />} />
           <DrivedGroupList />
-          <DrivedGroupDialog>
-            Dump text.
-          </DrivedGroupDialog>
+          <DrivedGroupDialog />
         </div>
       </MuiThemeProvider>
     )
