@@ -1,6 +1,6 @@
 import {GROUP_REMOVE_REQUEST, GROUP_REMOVE_SUCCESS, GROUP_REMOVE_FAILURE} from '../actions/group_remove'
 import {FETCHING_STATE, FAILURE_STATE} from '../common/states'
-import {setGroupState, initialGroupsState} from './common'
+import {setGroupState, initialCollectionState} from './common'
 import {handleActions} from 'redux-actions'
 
 export const groupRemove = handleActions({
@@ -16,4 +16,4 @@ export const groupRemove = handleActions({
     ...state,
     items: setGroupState(state.items, action.payload, FAILURE_STATE),
   }),
-}, initialGroupsState)
+}, initialCollectionState)

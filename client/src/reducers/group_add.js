@@ -1,6 +1,6 @@
 import {GROUP_ADD_REQUEST, GROUP_ADD_SUCCESS, GROUP_ADD_FAILURE} from '../actions/group_add'
 import {FETCHING_STATE, SUCCESS_STATE, FAILURE_STATE} from '../common/states'
-import {setGroupState, initialGroupsState} from './common'
+import {setGroupState, initialCollectionState} from './common'
 import {handleActions} from 'redux-actions'
 
 export const groupAdd = handleActions({
@@ -12,6 +12,7 @@ export const groupAdd = handleActions({
         _id: action.payload,
         screen_name: '',
       },
+      counters: initialCollectionState,
     }, ...state.items],
   }),
   [GROUP_ADD_SUCCESS]: (state, action) => ({
@@ -19,6 +20,7 @@ export const groupAdd = handleActions({
     items: [{
       state: SUCCESS_STATE,
       data: action.payload.new_group,
+      counters: initialCollectionState,
     }, ...state.items.filter(
       group => group.data._id !== action.payload.fake_group_id
     )],
@@ -27,4 +29,4 @@ export const groupAdd = handleActions({
     ...state,
     items: setGroupState(state.items, action.payload, FAILURE_STATE),
   }),
-}, initialGroupsState)
+}, initialCollectionState)

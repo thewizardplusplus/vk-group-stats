@@ -1,6 +1,6 @@
 import {GROUPS_REQUEST, GROUPS_SUCCESS, GROUPS_FAILURE} from '../actions/groups'
 import {FETCHING_STATE, SUCCESS_STATE, FAILURE_STATE} from '../common/states'
-import {initialGroupsState} from './common'
+import {initialCollectionState} from './common'
 import {handleActions} from 'redux-actions'
 
 export const groups = handleActions({
@@ -14,10 +14,11 @@ export const groups = handleActions({
     items: action.payload.map(group => ({
       state: SUCCESS_STATE,
       data: group,
+      counters: initialCollectionState,
     })),
   }),
   [GROUPS_FAILURE]: (state, action) => ({
     ...state,
     state: FAILURE_STATE,
   }),
-}, initialGroupsState)
+}, initialCollectionState)
