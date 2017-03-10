@@ -4,6 +4,9 @@ export const initialCollectionState = {
   state: SUCCESS_STATE,
   items: [],
 }
+export const initialDialogState = {
+  open: false,
+}
 
 export function updateGroup(groups, group_id, group_handler) {
   return groups.map(group => {
