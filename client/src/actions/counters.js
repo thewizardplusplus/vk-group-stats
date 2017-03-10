@@ -36,7 +36,10 @@ export function fetchCounters(group_id) {
       .format('YYYY-MM-DDTHH:mm:ssZZ')
     return fetch(
         `/api/v1/groups/${group_id}/counters?`
-          + `start_timestamp=${encodeURIComponent(start_timestamp)}`
+          + `start_timestamp=${encodeURIComponent(start_timestamp)}`,
+        {
+          credentials: 'same-origin',
+        }
       )
       .then(response => response.json())
       .then(json => {

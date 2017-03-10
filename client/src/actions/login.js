@@ -12,7 +12,9 @@ export function fetchLogin() {
   return function(dispatch) {
     dispatch(loginRequest())
 
-    return fetch('/api/v1/users/me')
+    return fetch('/api/v1/users/me', {
+        credentials: 'same-origin',
+      })
       .then(response => response.json())
       .then(json => {
         if (typeof json.data !== 'undefined') {

@@ -14,6 +14,7 @@ export function addCounter(group_id) {
 
     return fetch(`/api/v1/groups/${group_id}/counters`, {
         method: 'POST',
+        credentials: 'same-origin',
       })
       .then(response => response.json())
       .then(json => {

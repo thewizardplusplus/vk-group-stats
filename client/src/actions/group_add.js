@@ -19,6 +19,7 @@ export function addGroup(screen_name) {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'same-origin',
         body: JSON.stringify({
           screen_name,
         }),

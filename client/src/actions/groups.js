@@ -12,7 +12,9 @@ export function fetchGroups() {
   return function(dispatch) {
     dispatch(groupsRequest())
 
-    return fetch('/api/v1/groups')
+    return fetch('/api/v1/groups', {
+        credentials: 'same-origin',
+      })
       .then(response => response.json())
       .then(json => {
         if (typeof json.data !== 'undefined') {
