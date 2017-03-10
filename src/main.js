@@ -1,3 +1,4 @@
+import {update_env} from './utils/env'
 import express from 'express'
 import {logger, http_logger} from './utils/logger'
 import {cookie_parser, session} from './utils/session'
@@ -14,6 +15,7 @@ import {init_scheduler} from './utils/scheduler'
 import util from 'util'
 import {init_mongodb} from './utils/mongodb'
 
+update_env()
 init_mongodb(() => {
   try {
     const app = express()

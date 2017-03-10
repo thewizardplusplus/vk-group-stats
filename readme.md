@@ -125,6 +125,18 @@ Environment variables:
 * `VK_GROUP_STATS_SKIP_AUTHENTICATION` &mdash; skip an authentication (`TRUE` to a skip);
 * `VK_GROUP_STATS_SCHEDULING` &mdash; scheduling settings (use the cron utility format; default: `0 0 * * *`, i.e. once every day).
 
+Environment variables can be specified in a `.env` file in the project root in the format:
+
+```
+NAME_1=value_1
+NAME_2=value_2
+...
+```
+
+See details about the format: https://github.com/motdotla/dotenv#rules
+
+A `.env` file will never modify any environment variables that have already been set.
+
 ## API
 
 API description in the [Swagger](http://swagger.io/) format: [docs/api.yaml](docs/api.yaml).
