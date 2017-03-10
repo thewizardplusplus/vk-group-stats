@@ -6,12 +6,17 @@ import MenuItem from 'material-ui/MenuItem'
 
 export default class MainMenu extends React.Component {
   static propTypes = {
+    onRefresh: React.PropTypes.func.isRequired,
     onGroupAdd: React.PropTypes.func.isRequired,
   }
 
   render() {
     return <IconMenu
       iconButtonElement={<IconButton><Icon name="more_vert" /></IconButton>}>
+      <MenuItem
+        leftIcon={<Icon name="refresh" />}
+        primaryText="Перезагрузить"
+        onTouchTap={this.props.onRefresh} />
       <MenuItem
         leftIcon={<Icon name="add" />}
         primaryText="Добавить группу"
