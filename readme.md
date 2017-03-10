@@ -75,18 +75,39 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
                     * delta compared to a previous;
     * add group dialog.
 
+## Installation
+
+Install Node.js v6+: https://nodejs.org/en/download/package-manager/
+
+Install MongoDB Community Edition v3.4+: https://docs.mongodb.com/manual/installation/
+
+Clone this repository:
+
+```
+$ git clone https://github.com/thewizardplusplus/vk-group-stats.git
+$ cd vk-group-stats
+```
+
+Install dependencies:
+
+```
+$ npm run install-all
+```
+
+Build the project:
+
+```
+$ npm run build
+```
+
+Create the [VK](http://vk.com/) website app: https://vk.com/dev/first_guide?f=2.%20Application%20registration
+
+Its authorized redirect URI must be in the format: `http://<host>[:<port>]/authentication/vk/callback`.
+
 ## Usage
 
-In a development:
-
 ```
-$ npm start
-```
-
-In a production:
-
-```
-$ npm server-up
+$ npm run serve
 ```
 
 Environment variables:
