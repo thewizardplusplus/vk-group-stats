@@ -1,6 +1,21 @@
 {
   "type": "object",
   "properties": {
+    "login": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/definitions/state"
+        },
+        "isLogged": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "state",
+        "isLogged"
+      ]
+    },
     "appDialog": {
       "$ref": "#/definitions/dialog"
     },
