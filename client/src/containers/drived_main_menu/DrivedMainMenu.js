@@ -1,5 +1,6 @@
 import {fetchGroups} from '../../actions/groups'
 import {groupDialogOpen} from '../../actions/group_dialog'
+import {appDialogOpen} from '../../actions/app_dialog'
 import {connect} from 'react-redux'
 import MainMenu from '../../components/main_menu/MainMenu'
 
@@ -10,6 +11,9 @@ function mapDispatchToProps(dispatch) {
     },
     onGroupAdd() {
       dispatch(groupDialogOpen())
+    },
+    onAbout() {
+      dispatch(appDialogOpen())
     },
   }
 }

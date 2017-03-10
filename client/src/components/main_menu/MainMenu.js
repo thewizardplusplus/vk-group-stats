@@ -8,6 +8,7 @@ export default class MainMenu extends React.Component {
   static propTypes = {
     onRefresh: React.PropTypes.func.isRequired,
     onGroupAdd: React.PropTypes.func.isRequired,
+    onAbout: React.PropTypes.func.isRequired,
   }
 
   render() {
@@ -21,6 +22,10 @@ export default class MainMenu extends React.Component {
         leftIcon={<Icon name="add" />}
         primaryText="Добавить группу"
         onTouchTap={this.props.onGroupAdd} />
+      <MenuItem
+        leftIcon={<Icon name="info_outline" />}
+        primaryText="О сервисе"
+        onTouchTap={this.props.onAbout} />
     </IconMenu>
   }
 }
