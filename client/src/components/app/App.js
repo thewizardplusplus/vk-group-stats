@@ -6,6 +6,7 @@ import {DrivedMainMenu} from '../../containers/drived_main_menu/DrivedMainMenu'
 import AppBar from 'material-ui/AppBar'
 import {DrivedGroupList} from '../../containers/drived_group_list/DrivedGroupList'
 import {DrivedGroupDialog} from '../../containers/drived_group_dialog/DrivedGroupDialog'
+import {DrivedAppDialog} from '../../containers/drived_app_dialog/DrivedAppDialog'
 import {DrivedUpdateButton} from '../../containers/drived_update_button/DrivedUpdateButton'
 import './app.css'
 
@@ -23,6 +24,7 @@ export default class App extends React.Component {
             iconElementRight={<DrivedMainMenu />} />
           <DrivedGroupList />
           <DrivedGroupDialog />
+          <DrivedAppDialog />
           <DrivedUpdateButton />
         </div>
       </MuiThemeProvider>
