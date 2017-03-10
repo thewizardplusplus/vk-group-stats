@@ -11,8 +11,11 @@ import './app.css'
 
 export default class App extends React.Component {
   render() {
+    const muiTheme = getMuiTheme(darkBaseTheme)
+    document.body.style.backgroundColor = muiTheme.palette.canvasColor
+
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+      <MuiThemeProvider muiTheme={muiTheme}>
         <div>
           <AppBar
             title="Статистика сообществ ВКонтакте"
