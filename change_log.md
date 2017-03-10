@@ -1,5 +1,15 @@
 # Change Log
 
+## [v1.0.0-alpha.3](https://github.com/thewizardplusplus/vk-group-stats/tree/v1.0.0-alpha.3) (2017-03-10)
+
+- back-end:
+    - remove the `DELETE /groups/{group_id}/counters` route;
+- front-end:
+    - use the ESLint utility;
+    - add a group counters displaying;
+    - add a group counter adding;
+    - add an adding of counters for all groups simultaneously.
+
 ## [v1.0.0-alpha.2](https://github.com/thewizardplusplus/vk-group-stats/tree/v1.0.0-alpha.2) (2017-03-09)
 
 - correct npm scripts:
