@@ -133,24 +133,6 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/error'
-    delete:
-      responses:
-        200:
-          description: OK
-          schema:
-            $ref: '#/definitions/ok'
-        400:
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/error'
-        401:
-          description: Unauthorized
-          schema:
-            $ref: '#/definitions/error'
-        500:
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/error'
   /users/me:
     get:
       responses:

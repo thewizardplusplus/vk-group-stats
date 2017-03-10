@@ -59,16 +59,6 @@ all_counters_router.route('/groups/:group_id/counters')
       }))
       .catch(next_handler)
   })
-  .delete(check_authentication, (request, response, next_handler) => {
-    counter_model
-      .remove({
-        group_id: request.params.group_id,
-      })
-      .then(() => response.json({
-        data: true,
-      }))
-      .catch(next_handler)
-  })
 
 export const counter_router = express.Router()
 counter_router.use(all_counters_router)
