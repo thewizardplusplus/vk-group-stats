@@ -3,6 +3,7 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import {DrivedMainMenu} from '../../containers/drived_main_menu/DrivedMainMenu'
+import {DrivedGate} from '../../containers/drived_gate/DrivedGate'
 import AppBar from 'material-ui/AppBar'
 import {DrivedGroupList} from '../../containers/drived_group_list/DrivedGroupList'
 import {DrivedGroupDialog} from '../../containers/drived_group_dialog/DrivedGroupDialog'
@@ -22,10 +23,14 @@ export default class App extends React.Component {
             title="Статистика сообществ ВКонтакте"
             showMenuIconButton={false}
             iconElementRight={<DrivedMainMenu />} />
-          <DrivedGroupList />
-          <DrivedGroupDialog />
-          <DrivedAppDialog />
-          <DrivedUpdateButton />
+          <DrivedGate>
+            <div>
+              <DrivedGroupList />
+              <DrivedGroupDialog />
+              <DrivedAppDialog />
+              <DrivedUpdateButton />
+            </div>
+          </DrivedGate>
         </div>
       </MuiThemeProvider>
     )
