@@ -63,10 +63,16 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
         * for every group:
             * displays:
                 * [VK](http://vk.com/) screen name;
+                * counters for a last day;
             * states:
                 * fetching;
                 * success;
                 * failure;
+            * for every counter:
+                * displays:
+                    * timestamp;
+                    * number of subscribers;
+                    * delta compared to a previous;
     * add group dialog.
 
 ## Usage
