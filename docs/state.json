@@ -1,16 +1,11 @@
 {
   "type": "object",
   "properties": {
+    "appDialog": {
+      "$ref": "#/definitions/dialog"
+    },
     "groupDialog": {
-      "type": "object",
-      "properties": {
-        "open": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "open"
-      ]
+      "$ref": "#/definitions/dialog"
     },
     "groups": {
       "type": "object",
@@ -63,10 +58,22 @@
     }
   },
   "required": [
+    "appDialog",
     "groupDialog",
     "groups"
   ],
   "definitions": {
+    "dialog": {
+      "type": "object",
+      "properties": {
+        "open": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "open"
+      ]
+    },
     "state": {
       "type": "string",
       "enum": [
