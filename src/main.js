@@ -1,5 +1,6 @@
 import {update_env} from './utils/env'
 import express from 'express'
+import helmet from 'helmet'
 import {logger, http_logger} from './utils/logger'
 import {cookie_parser, session} from './utils/session'
 import body_parser from 'body-parser'
@@ -19,6 +20,9 @@ update_env()
 init_mongodb(() => {
   try {
     const app = express()
+    app.use(helmet({
+      hsts: false,
+    }))
     app.use(http_logger)
     app.use(cookie_parser)
     app.use(body_parser.urlencoded({
