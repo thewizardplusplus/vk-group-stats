@@ -6,9 +6,8 @@ export function init_mongodb(connection_handler) {
   mongoose.Promise = global.Promise
   mongoose
     .connect(
-      process.env.VK_GROUP_STATS_MONGODB_HOST || 'localhost',
-      process.env.VK_GROUP_STATS_MONGODB_DATABASE || 'vk-group-stats',
-      process.env.VK_GROUP_STATS_MONGODB_PORT || 27017
+      process.env.VK_GROUP_STATS_MONGODB_URI
+        || 'mongodb://localhost/vk-group-stats'
     )
     .then(() => {
       logger.info('app connected to MongoDB')

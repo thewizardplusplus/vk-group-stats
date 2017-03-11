@@ -114,9 +114,7 @@ Environment variables:
 
 * `NODE_ENV` &mdash; the current environment (allowed: `production`);
 * `VK_GROUP_STATS_SERVER_PORT` &mdash; the server port (default: 4000);
-* `VK_GROUP_STATS_MONGODB_HOST` &mdash; the MongoDB host (default: `localhost`);
-* `VK_GROUP_STATS_MONGODB_DATABASE` &mdash; the MongoDB database (default: `vk-group-stats`);
-* `VK_GROUP_STATS_MONGODB_PORT` &mdash; the MongoDB port (default: 27017);
+* `VK_GROUP_STATS_MONGODB_URI` &mdash; the MongoDB connection URI (default: `mongodb://localhost/vk-group-stats`);
 * `VK_GROUP_STATS_SESSION_SECURE` &mdash; use secure sessions (`TRUE` to an use);
 * `VK_GROUP_STATS_SESSION_SECRET` &mdash; the sessions secret (default: a random UUID v4);
 * `VK_GROUP_STATS_VK_APP_ID` &mdash; the [VK](http://vk.com/) app ID (default: 5878021);
