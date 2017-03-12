@@ -52,7 +52,9 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
 * front-end:
     * design:
         * adaptive;
-        * material;
+        * material:
+            * dark;
+            * light;
     * group list:
         * displays:
             * groups;
@@ -100,10 +102,16 @@ Install dependencies:
 $ npm run install-all
 ```
 
-Build the project:
+Build the project (with the dark theme by default):
 
 ```
 $ npm run build
+```
+
+To use the light theme, build the project with the `REACT_APP_USE_LIGHT_THEME` environment variable set to `TRUE`:
+
+```
+$ REACT_APP_USE_LIGHT_THEME=TRUE npm run build
 ```
 
 Create the [VK](http://vk.com/) website app: https://vk.com/dev/first_guide?f=2.%20Application%20registration
@@ -132,10 +140,16 @@ Install new dependencies:
 $ npm run install-all
 ```
 
-Rebuild the project:
+Rebuild the project (with the dark theme by default):
 
 ```
 $ npm run build
+```
+
+To use the light theme, rebuild the project with the `REACT_APP_USE_LIGHT_THEME` environment variable set to `TRUE`:
+
+```
+$ REACT_APP_USE_LIGHT_THEME=TRUE npm run build
 ```
 
 ## Usage
@@ -147,6 +161,7 @@ $ npm run serve
 Environment variables:
 
 * `NODE_ENV` &mdash; the current environment (allowed: `production`);
+* `REACT_APP_USE_LIGHT_THEME` &mdash; use the light theme (it's accepted only during the build time; `TRUE` to an use);
 * `VK_GROUP_STATS_SERVER_HOST` &mdash; the server host (default: `localhost`);
 * `VK_GROUP_STATS_SERVER_PORT` &mdash; the server port (default: 4000);
 * `VK_GROUP_STATS_MONGODB_URI` &mdash; the MongoDB connection URI (default: `mongodb://localhost/vk-group-stats`);
