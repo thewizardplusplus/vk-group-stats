@@ -12,8 +12,17 @@ import {DrivedUpdateButton} from '../../containers/drived_update_button/DrivedUp
 import './app.css'
 
 export default class App extends React.Component {
+  getMuiTheme() {
+    return getMuiTheme(darkBaseTheme, {
+      palette: {
+        counterLossColor: '#86696d',
+        counterGainColor: '#697b77',
+      },
+    })
+  }
+
   render() {
-    const muiTheme = getMuiTheme(darkBaseTheme)
+    const muiTheme = this.getMuiTheme()
     document.body.style.backgroundColor = muiTheme.palette.canvasColor
 
     return (

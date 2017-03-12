@@ -2,9 +2,9 @@ import React from 'react'
 import {Table, TableBody, TableRow, TableRowColumn} from 'material-ui/Table'
 import Icon from '../icon/Icon'
 import moment from 'moment'
-import './counters_table.css'
+import muiThemeable from 'material-ui/styles/muiThemeable'
 
-export default class CountersTable extends React.Component {
+class CountersTable extends React.Component {
   static propTypes = {
     counters: React.PropTypes.arrayOf(React.PropTypes.shape({
       _id: React.PropTypes.string.isRequired,
@@ -38,10 +38,13 @@ export default class CountersTable extends React.Component {
                 */}
               <Icon name="people" /> {counter.value}
             </TableRowColumn>
-            <TableRowColumn className={this.selectDeltaViewProperty(
-              counter.delta,
-              ['CountersTable-loss', null, 'CountersTable-gain']
-            )}>
+            <TableRowColumn style={{
+              backgroundColor: this.selectDeltaViewProperty(counter.delta, [
+                this.props.muiTheme.palette.counterLossColor,
+                'inherit',
+                this.props.muiTheme.palette.counterGainColor,
+              ]),
+            }}>
               {typeof counter.delta === 'undefined' ? null : <span>
                 {/* expand icons have gaps, because a middle space isn't required
                   */}
@@ -61,3 +64,4 @@ export default class CountersTable extends React.Component {
     </Table>
   }
 }
+export default muiThemeable()(CountersTable)
