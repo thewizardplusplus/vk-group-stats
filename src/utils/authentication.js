@@ -1,3 +1,4 @@
+import {read_vk_api_parameters} from './vk_api'
 import vk_strategy from 'passport-vkontakte'
 import {user_model} from '../models/user_model'
 import {logger} from './logger'
@@ -5,11 +6,11 @@ import passport from 'passport'
 import mongoose from 'mongoose'
 
 export function init_authentication() {
+  const {app_id, app_secret, app_redirect_uri} = read_vk_api_parameters()
   passport.use(new vk_strategy.Strategy({
-    clientID: process.env.VK_GROUP_STATS_VK_APP_ID || 5878021,
-    clientSecret: process.env.VK_GROUP_STATS_VK_APP_SECRET,
-    callbackURL: process.env.VK_GROUP_STATS_VK_APP_CALLBACK
-      || 'http://localhost:4000/authentication/vk/callback',
+    clientID: app_id,
+    clientSecret: app_secret,
+    callbackURL: app_redirect_uri,
   }, (access_token, refresh_token, parameters, profile, done_handler) => {
     const query = {
       vk_id: profile.id,

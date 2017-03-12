@@ -113,11 +113,11 @@ $ npm run serve
 Environment variables:
 
 * `NODE_ENV` &mdash; the current environment (allowed: `production`);
+* `VK_GROUP_STATS_SERVER_HOST` &mdash; the server host (default: `localhost`);
 * `VK_GROUP_STATS_SERVER_PORT` &mdash; the server port (default: 4000);
 * `VK_GROUP_STATS_MONGODB_URI` &mdash; the MongoDB connection URI (default: `mongodb://localhost/vk-group-stats`);
-* `VK_GROUP_STATS_VK_APP_ID` &mdash; the [VK](http://vk.com/) app ID (default: 5878021);
-* `VK_GROUP_STATS_VK_APP_SECRET` &mdash; the [VK](http://vk.com/) app secret;
-* `VK_GROUP_STATS_VK_APP_CALLBACK` &mdash; the [VK](http://vk.com/) app callback for an authentication (default: `http://localhost:4000/authentication/vk/callback`);
+* `VK_GROUP_STATS_VK_APP_ID` &mdash; the [VK](http://vk.com/) app ID;
+* `VK_GROUP_STATS_VK_APP_SECRET` &mdash; the [VK](http://vk.com/) app secure key;
 * `VK_GROUP_STATS_SKIP_AUTHENTICATION` &mdash; skip an authentication (`TRUE` to a skip);
 * `VK_GROUP_STATS_SCHEDULING` &mdash; scheduling settings (use the cron utility format; default: `0 0 * * *`, i.e. once every day).
 

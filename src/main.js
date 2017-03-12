@@ -13,6 +13,8 @@ import {user_router} from './routers/user_router'
 import {error_handler} from './utils/errors'
 import {init_authentication, fake_authentication} from './utils/authentication'
 import {init_scheduler} from './utils/scheduler'
+import {read_server_uri} from './utils/server_uri'
+import {read_vk_api_parameters} from './utils/vk_api'
 import util from 'util'
 import {init_mongodb} from './utils/mongodb'
 
@@ -50,9 +52,12 @@ init_mongodb(() => {
     init_authentication()
     init_scheduler()
 
-    const port = process.env.VK_GROUP_STATS_SERVER_PORT || 4000
+    const {port, authority_part} = read_server_uri()
     app.listen(port, () => {
-      logger.info(`app listening on port ${port}`)
+      logger.info(`app listening on http://${authority_part}/`)
+
+      const {app_redirect_uri} = read_vk_api_parameters()
+      logger.info(`VK app redirect URI is ${app_redirect_uri}/`)
     })
   } catch(error) {
     logger.error(`unknown error: ${util.inspect(error)}`)

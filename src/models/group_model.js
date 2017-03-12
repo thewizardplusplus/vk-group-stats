@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import {logger} from '../utils/logger'
 import {counter_model} from '../models/counter_model'
-import {vk_api_client} from '../utils/vk_api'
+import {init_vk_api_client} from '../utils/vk_api'
 
 const group_schema = new mongoose.Schema({
   user_id: {
@@ -14,7 +14,7 @@ const group_schema = new mongoose.Schema({
   },
 })
 group_schema.methods.update_counter = function(done_handler) {
-  vk_api_client
+  init_vk_api_client()
     .call('groups.getById', {
       group_id: this.screen_name,
       fields: 'members_count',
