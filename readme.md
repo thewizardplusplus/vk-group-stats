@@ -73,7 +73,13 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
                     * timestamp;
                     * number of subscribers;
                     * delta compared to a previous;
-    * add group dialog.
+    * dialogs:
+        * add group dialog;
+        * about app dialog;
+    * group list refreshing;
+    * authentication:
+        * login;
+        * logout.
 
 ## Installation
 
