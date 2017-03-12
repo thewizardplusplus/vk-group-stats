@@ -192,9 +192,13 @@ Redux state in the JSON Schema format: [docs/state.json](docs/state.json).
 
 ## Screenshots
 
-![Group list](screenshots/screenshot_07.png)
+![Group list (with the dark theme)](screenshots/screenshot_07.00.png)
 
-Group list
+Group list (with the dark theme)
+
+![Group list (with the light theme)](screenshots/screenshot_07.01.png)
+
+Group list (with the light theme)
 
 ![Fetching state](screenshots/screenshot_08.png)
 
@@ -208,9 +212,13 @@ Failure state
 
 Add group dialog
 
-![Main menu](screenshots/screenshot_11.png)
+![Main menu (unauthorized)](screenshots/screenshot_11.png)
 
-Main menu
+Main menu (unauthorized)
+
+![Main menu (authorized)](screenshots/screenshot_12.png)
+
+Main menu (authorized)
 
 ## License
 
