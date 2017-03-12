@@ -1,4 +1,4 @@
-import {update_env} from './utils/env'
+import {process_env} from './utils/env'
 import express from 'express'
 import helmet from 'helmet'
 import {logger, http_logger} from './utils/logger'
@@ -18,7 +18,7 @@ import {read_vk_api_parameters} from './utils/vk_api'
 import util from 'util'
 import {init_mongodb} from './utils/mongodb'
 
-update_env()
+process_env()
 init_mongodb(() => {
   try {
     const app = express()
