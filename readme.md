@@ -111,6 +111,27 @@ $ nano .env.prod
 $ mv .env.prod .env
 ```
 
+## Update
+
+Pull updates from the repository:
+
+```
+$ cd vk-group-stats
+$ git pull --rebase origin master
+```
+
+Install new dependencies:
+
+```
+$ npm run install-all
+```
+
+Rebuild the project:
+
+```
+$ npm run build
+```
+
 ## Usage
 
 ```
