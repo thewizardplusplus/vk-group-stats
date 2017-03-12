@@ -104,6 +104,13 @@ Create the [VK](http://vk.com/) website app: https://vk.com/dev/first_guide?f=2.
 
 Its authorized redirect URI must be in the format: `http://<host>[:<port>]/authentication/vk/callback`.
 
+Set environment variables in the `.env.prod` file in the project root and rename it to `.env`:
+
+```
+$ nano .env.prod
+$ mv .env.prod .env
+```
+
 ## Usage
 
 ```
