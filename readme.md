@@ -99,7 +99,7 @@ $ cd vk-group-stats
 Install dependencies:
 
 ```
-$ npm run install-all
+$ npm install
 ```
 
 Build the project (with the dark theme by default):
@@ -137,7 +137,7 @@ $ git pull --rebase origin master
 Install new dependencies:
 
 ```
-$ npm run install-all
+$ npm install
 ```
 
 Rebuild the project (with the dark theme by default):
