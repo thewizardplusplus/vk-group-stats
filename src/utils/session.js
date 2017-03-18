@@ -10,8 +10,8 @@ const session_store = session_store_generator(session_generator)
 export const session = session_generator({
   name: 'sessionId',
   proxy: true,
-  resave: true,
-  saveUninitialized: true,
+  resave: false,
+  saveUninitialized: false,
   secret: session_secret,
   store: new session_store({
     mongooseConnection: mongoose.connection,
