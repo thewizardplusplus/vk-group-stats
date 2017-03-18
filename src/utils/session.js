@@ -8,9 +8,6 @@ const session_secret = uuid_v4()
 export const cookie_parser = cookie_parser_generator(session_secret)
 const session_store = session_store_generator(session_generator)
 export const session = session_generator({
-  cookie: {
-    secure: true,
-  },
   name: 'sessionId',
   proxy: true,
   resave: true,
