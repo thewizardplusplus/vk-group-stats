@@ -9,7 +9,6 @@ export const cookie_parser = cookie_parser_generator(session_secret)
 const session_store = session_store_generator(session_generator)
 export const session = session_generator({
   name: 'sessionId',
-  proxy: true,
   resave: false,
   saveUninitialized: false,
   secret: session_secret,
