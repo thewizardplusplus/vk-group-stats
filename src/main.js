@@ -14,6 +14,7 @@ import {error_handler} from './utils/errors'
 import {init_authentication, fake_authentication} from './utils/authentication'
 import {init_scheduler} from './utils/scheduler'
 import {read_server_uri} from './utils/server_uri'
+import url_join from 'url-join'
 import {read_vk_api_parameters} from './utils/vk_api'
 import util from 'util'
 import {init_mongodb} from './utils/mongodb'
@@ -52,9 +53,9 @@ init_mongodb(() => {
     init_authentication()
     init_scheduler()
 
-    const {port, authority_part} = read_server_uri()
+    const {port, uri} = read_server_uri()
     app.listen(port, () => {
-      logger.info(`app listening on http://${authority_part}/`)
+      logger.info(`app listening on ${url_join(uri, '')}`)
 
       const {app_redirect_uri} = read_vk_api_parameters()
       logger.info(`VK app redirect URI is ${app_redirect_uri}/`)
