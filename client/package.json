@@ -31,7 +31,7 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "start": "react-scripts start"
+    "dev": "react-scripts start"
   },
   "proxy": "http://localhost:4000",
   "eslintConfig": {

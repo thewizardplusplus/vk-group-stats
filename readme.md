@@ -155,7 +155,7 @@ $ REACT_APP_USE_LIGHT_THEME=TRUE npm run build
 ## Usage
 
 ```
-$ npm run serve
+$ npm start
 ```
 
 Environment variables:
