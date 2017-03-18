@@ -164,7 +164,7 @@ Environment variables:
 * `REACT_APP_USE_LIGHT_THEME` &mdash; use the light theme (it's accepted only during the build time; `TRUE` to an use);
 * `VK_GROUP_STATS_SERVER_HOST` &mdash; the server host (default: `localhost`);
 * `VK_GROUP_STATS_SERVER_PORT` &mdash; the server port (default: 4000);
-* `VK_GROUP_STATS_MONGODB_URI` &mdash; the MongoDB connection URI (default: `mongodb://localhost/vk-group-stats`);
+* `MONGODB_URI`, `VK_GROUP_STATS_MONGODB_URI` &mdash; the MongoDB connection URI (default: `mongodb://localhost/vk-group-stats`);
 * `VK_GROUP_STATS_VK_APP_ID` &mdash; the [VK](http://vk.com/) app ID;
 * `VK_GROUP_STATS_VK_APP_SECRET` &mdash; the [VK](http://vk.com/) app secure key;
 * `VK_GROUP_STATS_SKIP_AUTHENTICATION` &mdash; skip an authentication (`TRUE` to a skip);

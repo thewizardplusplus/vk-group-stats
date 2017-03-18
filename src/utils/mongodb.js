@@ -6,7 +6,8 @@ export function init_mongodb(connection_handler) {
   mongoose.Promise = global.Promise
   mongoose
     .connect(
-      process.env.VK_GROUP_STATS_MONGODB_URI
+      process.env.MONGODB_URI
+        || process.env.VK_GROUP_STATS_MONGODB_URI
         || 'mongodb://localhost/vk-group-stats'
     )
     .then(() => {
