@@ -12,6 +12,7 @@ export const session = session_generator({
     secure: true,
   },
   name: 'sessionId',
+  proxy: true,
   resave: false,
   saveUninitialized: false,
   secret: session_secret,
