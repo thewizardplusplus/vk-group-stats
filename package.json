@@ -53,5 +53,9 @@
     "presets": [
       "env"
     ]
-  }
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ]
 }
