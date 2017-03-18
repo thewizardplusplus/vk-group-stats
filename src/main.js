@@ -2,7 +2,7 @@ import {process_env} from './utils/env'
 import express from 'express'
 import helmet from 'helmet'
 import {logger, http_logger} from './utils/logger'
-import {cookie_parser, session} from './utils/session'
+import {init_session} from './utils/session'
 import body_parser from 'body-parser'
 import passport from 'passport'
 import express_validator from 'express-validator'
@@ -27,6 +27,8 @@ init_mongodb(() => {
       hsts: false,
     }))
     app.use(http_logger)
+
+    const {cookie_parser, session} = init_session()
     app.use(cookie_parser)
     app.use(body_parser.urlencoded({
       extended: true,
