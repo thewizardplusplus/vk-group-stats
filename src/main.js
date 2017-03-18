@@ -59,7 +59,7 @@ init_mongodb(() => {
       logger.info(`app listening on ${url_join(uri, '')}`)
 
       const {app_redirect_uri} = read_vk_api_parameters()
-      logger.info(`VK app redirect URI is ${app_redirect_uri}/`)
+      logger.info(`VK app redirect URI is ${app_redirect_uri}`)
     })
   } catch(error) {
     logger.error(`unknown error: ${util.inspect(error)}`)
