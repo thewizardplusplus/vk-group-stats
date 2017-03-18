@@ -15,5 +15,6 @@ export function init_mongodb(connection_handler) {
     })
     .catch(error => {
       logger.error(`app can't connect to MongoDB: ${util.inspect(error)}`)
+      process.exit(1)
     })
 }

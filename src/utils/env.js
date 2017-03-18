@@ -23,7 +23,7 @@ function check_env() {
         + missed_variables.join(', ')
     )
 
-    process.exit()
+    process.exit(1)
   }
 }
 

@@ -61,5 +61,6 @@ init_mongodb(() => {
     })
   } catch(error) {
     logger.error(`unknown error: ${util.inspect(error)}`)
+    process.exit(1)
   }
 })
