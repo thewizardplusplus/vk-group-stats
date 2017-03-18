@@ -32,6 +32,7 @@ init_mongodb(() => {
       extended: true,
     }))
     app.use(body_parser.json())
+    app.set('trust proxy', 1) // trust a first proxy
     app.use(session)
     app.use(passport.initialize())
     app.use(passport.session())
