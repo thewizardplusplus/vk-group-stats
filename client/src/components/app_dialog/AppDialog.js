@@ -20,7 +20,7 @@ export default class AppDialog extends React.Component {
           onClick={this.props.onClose} />,
       ]}>
       <p>
-        <strong>VK Group Stats, v1.0.0</strong>
+        <strong>VK Group Stats, v1.1.0</strong>
       </p>
       <p>
         Copyright &copy; 2017 thewizardplusplus
