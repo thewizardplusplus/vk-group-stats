@@ -1,5 +1,24 @@
 # Change Log
 
+## [v1.1.0-alpha](https://github.com/thewizardplusplus/vk-group-stats/tree/v1.1.0-alpha) (2017-03-19)
+
+**Closed issues:**
+
+- Restore a support of the VK\_GROUP\_STATS\_SESSION\_SECRET environment variable [\#13](https://github.com/thewizardplusplus/vk-group-stats/issues/13)
+- Generate a VK app redirect URI independently of a server port [\#10](https://github.com/thewizardplusplus/vk-group-stats/issues/10)
+- Read a server port from the PORT environment variable too [\#9](https://github.com/thewizardplusplus/vk-group-stats/issues/9)
+- Read a MongoDB connection URI from the MONGODB\_URI environment variable too [\#8](https://github.com/thewizardplusplus/vk-group-stats/issues/8)
+- Correct a caching of builds on Heroku [\#6](https://github.com/thewizardplusplus/vk-group-stats/issues/6)
+- Simplify and unify a starting [\#5](https://github.com/thewizardplusplus/vk-group-stats/issues/5)
+- Build after an installing on Heroku [\#4](https://github.com/thewizardplusplus/vk-group-stats/issues/4)
+- Simplify and unify an installing [\#3](https://github.com/thewizardplusplus/vk-group-stats/issues/3)
+- Move build dependencies to production dependencies [\#2](https://github.com/thewizardplusplus/vk-group-stats/issues/2)
+- Specify a required Node.js version [\#1](https://github.com/thewizardplusplus/vk-group-stats/issues/1)
+
+**Fixed bugs:**
+
+- Correct exit codes on errors [\#7](https://github.com/thewizardplusplus/vk-group-stats/issues/7)
+
 ## [v1.0.0](https://github.com/thewizardplusplus/vk-group-stats/tree/v1.0.0) (2017-03-12)
 
 - back-end:
