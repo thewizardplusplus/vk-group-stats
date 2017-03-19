@@ -183,6 +183,48 @@ See details about the format: https://github.com/motdotla/dotenv#rules
 
 A `.env` file will never modify any environment variables that have already been set.
 
+## Deploy on [Heroku](https://www.heroku.com/)
+
+Create a new Heroku personal app: https://dashboard.heroku.com/new?org=personal-apps
+
+Add to it mLab MongoDB add-on: https://elements.heroku.com/addons/mongolab
+
+Install Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
+
+Login to a Heroku account:
+
+```
+$ heroku login
+```
+
+Clone this repository:
+
+```
+$ git clone https://github.com/thewizardplusplus/vk-group-stats.git
+$ cd vk-group-stats
+```
+
+Create a Heroku remote:
+
+```
+$ heroku git:remote -a <heroku-personal-app-name>
+```
+
+Deploy the code:
+
+```
+$ git push heroku master
+```
+
+Set up environment variables for a deployed app:
+
+```
+$ heroku config:set VK_GROUP_STATS_SERVER_URI=<heroku-personal-app-uri>
+$ heroku config:set VK_GROUP_STATS_SESSION_SECRET=...
+$ heroku config:set VK_GROUP_STATS_VK_APP_ID=...
+$ heroku config:set VK_GROUP_STATS_VK_APP_SECRET=...
+```
+
 ## API
 
 API description in the [Swagger](http://swagger.io/) format: [docs/api.yaml](docs/api.yaml).
