@@ -186,6 +186,10 @@ definitions:
         $ref: '#/definitions/mongodb-objectid'
       user_id:
         $ref: '#/definitions/mongodb-objectid'
+      photo:
+        type: string
+      name:
+        type: string
       screen_name:
         type: string
     required:
