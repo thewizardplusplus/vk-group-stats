@@ -8,6 +8,12 @@ const group_schema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: [true, 'parameter is required'],
   },
+  photo: {
+    type: String,
+  },
+  name: {
+    type: String,
+  },
   screen_name: {
     type: String,
     required: [true, 'parameter is required'],
