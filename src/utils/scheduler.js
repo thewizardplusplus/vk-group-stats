@@ -15,7 +15,7 @@ export function init_scheduler() {
         .find({})
         .then(groups => {
           each(groups, (group, done_handler) => {
-            group.update_counter(error => {
+            group.update(error => {
               if (error !== null) {
                 logger.error(
                   `group ${group.id} can't update its counter: `

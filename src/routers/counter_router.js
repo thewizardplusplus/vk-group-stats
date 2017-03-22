@@ -47,7 +47,7 @@ all_counters_router.route('/groups/:group_id/counters')
   .post(check_authentication, (request, response, next_handler) => {
     group_model
       .findById(request.params.group_id)
-      .then(group => group.update_counter((error, counter) => {
+      .then(group => group.update((error, counter) => {
         if (error !== null) {
           next_handler(error)
           return

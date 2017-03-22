@@ -19,7 +19,7 @@ const group_schema = new mongoose.Schema({
     required: [true, 'parameter is required'],
   },
 })
-group_schema.methods.update_counter = function(done_handler) {
+group_schema.methods.update = function(done_handler) {
   init_vk_api_client()
     .call('groups.getById', {
       group_id: this.screen_name,
