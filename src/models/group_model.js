@@ -28,12 +28,32 @@ group_schema.methods.update = function(done_handler) {
     .then(response => {
       logger.info(`group ${this.id} requested VK API`)
 
-      counter_model
-        .create({
-          group_id: this.id,
-          value: response[0].members_count,
+      this
+        .model('group')
+        .findOneAndUpdate({
+          user_id: this.user_id,
+          screen_name: this.screen_name,
+        }, {
+          $set: {
+            photo: response[0].photo_50,
+            name: response[0].name,
+          },
+        }, {
+          new: true,
+          upsert: true,
         })
-        .then(counter => done_handler(null, counter))
+        .then(group => {
+          counter_model
+            .create({
+              group_id: group.id,
+              value: response[0].members_count,
+            })
+            .then(counter => done_handler(null, {
+              group,
+              counter,
+            }))
+            .catch(done_handler)
+        })
         .catch(done_handler)
     })
     .catch(done_handler)

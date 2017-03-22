@@ -47,14 +47,14 @@ all_counters_router.route('/groups/:group_id/counters')
   .post(check_authentication, (request, response, next_handler) => {
     group_model
       .findById(request.params.group_id)
-      .then(group => group.update((error, counter) => {
+      .then(group => group.update((error, data) => {
         if (error !== null) {
           next_handler(error)
           return
         }
 
         response.json({
-          data: counter,
+          data,
         })
       }))
       .catch(next_handler)
