@@ -15,6 +15,7 @@ function validate_request_body(request, response, next_handler) {
 }
 
 const all_groups_router = express.Router()
+const group_url_prefix = /^https?:\/\/vk\.com\//
 all_groups_router.route('/groups')
   .get(check_authentication, (request, response, next_handler) => {
     group_model
@@ -33,7 +34,7 @@ all_groups_router.route('/groups')
   ) => {
     new group_model({
       user_id: request.user.id,
-      screen_name: request.body.screen_name,
+      screen_name: request.body.screen_name.replace(group_url_prefix, ''),
     })
       .update(make_group_update_handler(response, next_handler))
   })
