@@ -38,6 +38,9 @@ group_schema.methods.update = function(done_handler) {
             photo: response[0].photo_50,
             name: response[0].name,
           },
+          $setOnInsert: {
+            _id: this._id,
+          },
         }, {
           new: true,
           upsert: true,
