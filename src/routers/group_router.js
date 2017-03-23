@@ -1,6 +1,6 @@
 import {check_authentication, validate_request} from '../utils/errors'
 import express from 'express'
-import {group_model} from '../models/group_model'
+import {group_model, make_group_update_handler} from '../models/group_model'
 
 function validate_request_body(request, response, next_handler) {
   request.checkBody({
@@ -31,15 +31,11 @@ all_groups_router.route('/groups')
     response,
     next_handler
   ) => {
-    group_model
-      .create({
-        user_id: request.user.id,
-        screen_name: request.body.screen_name,
-      })
-      .then(group => response.json({
-        data: group,
-      }))
-      .catch(next_handler)
+    new group_model({
+      user_id: request.user.id,
+      screen_name: request.body.screen_name,
+    })
+      .update(make_group_update_handler(response, next_handler))
   })
 
 const one_group_router = express.Router()
