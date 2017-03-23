@@ -44,7 +44,15 @@ paths:
             type: object
             properties:
               data:
-                $ref: '#/definitions/group'
+                type: object
+                properties:
+                  group:
+                    $ref: '#/definitions/group'
+                  counter:
+                    $ref: '#/definitions/counter'
+                required:
+                - group
+                - counter
             required:
             - data
         400:
