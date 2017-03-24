@@ -1,14 +1,7 @@
-import {createAction} from 'redux-actions'
 import uuidV4 from 'uuid/v4'
+import {groupAddRequest, groupAddSuccess, groupAddFailure} from './group_add_sync'
 import logError from './logger'
 
-export const GROUP_ADD_REQUEST = 'GROUP_ADD_REQUEST'
-export const GROUP_ADD_SUCCESS = 'GROUP_ADD_SUCCESS'
-export const GROUP_ADD_FAILURE = 'GROUP_ADD_FAILURE'
-
-const groupAddRequest = createAction(GROUP_ADD_REQUEST)
-const groupAddSuccess = createAction(GROUP_ADD_SUCCESS)
-const groupAddFailure = createAction(GROUP_ADD_FAILURE)
 export function addGroup(screen_name) {
   return function(dispatch) {
     const fake_group_id = uuidV4()

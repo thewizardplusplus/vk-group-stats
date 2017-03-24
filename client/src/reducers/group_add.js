@@ -1,4 +1,4 @@
-import {GROUP_ADD_REQUEST, GROUP_ADD_SUCCESS, GROUP_ADD_FAILURE} from '../actions/group_add'
+import {GROUP_ADD_REQUEST, GROUP_ADD_SUCCESS, GROUP_ADD_FAILURE} from '../actions/group_add_sync'
 import {FETCHING_STATE, SUCCESS_STATE, FAILURE_STATE} from '../common/states'
 import {setGroupState, initialCollectionState} from './common'
 import {handleActions} from 'redux-actions'

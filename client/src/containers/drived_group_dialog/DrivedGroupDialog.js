@@ -1,5 +1,5 @@
 import {groupDialogClose} from '../../actions/group_dialog'
-import {addGroup} from '../../actions/group_add'
+import {addGroup} from '../../actions/group_add_async'
 import {connect} from 'react-redux'
 import GroupDialog from '../../components/group_dialog/GroupDialog'
 
