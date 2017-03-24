@@ -10,6 +10,8 @@ export default class StatefulGroupList extends React.Component {
       state: React.PropTypes.oneOf(ALL_STATES).isRequired,
       data: React.PropTypes.shape({
         _id: React.PropTypes.string.isRequired,
+        photo: React.PropTypes.string,
+        name: React.PropTypes.string,
         screen_name: React.PropTypes.string.isRequired,
       }).isRequired,
     })).isRequired,

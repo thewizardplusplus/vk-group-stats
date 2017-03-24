@@ -7,6 +7,8 @@ export default class Group extends React.Component {
   static propTypes = {
     group: React.PropTypes.shape({
       _id: React.PropTypes.string.isRequired,
+      photo: React.PropTypes.string,
+      name: React.PropTypes.string,
       screen_name: React.PropTypes.string.isRequired,
     }).isRequired,
     onUpdate: React.PropTypes.func.isRequired,
