@@ -104,6 +104,12 @@
         "_id": {
           "$ref": "#/definitions/mongodb-objectid"
         },
+        "photo": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
         "screen_name": {
           "type": "string"
         }
