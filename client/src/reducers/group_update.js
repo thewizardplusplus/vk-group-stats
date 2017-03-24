@@ -7,8 +7,11 @@ export const groupUpdate = handleActions({
     ...state,
     items: updateGroup(state.items, action.payload._id, group => ({
       ...group,
-      photo: action.payload.photo,
-      name: action.payload.name,
+      data: {
+        ...group.data,
+        photo: action.payload.photo,
+        name: action.payload.name,
+      },
     })),
   }),
 }, initialCollectionState)
