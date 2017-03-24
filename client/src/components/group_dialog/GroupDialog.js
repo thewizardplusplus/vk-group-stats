@@ -60,7 +60,9 @@ export default class GroupDialog extends React.Component {
       ]}>
       <TextField
         className="GroupDialog-text-field"
-        floatingLabelText="Короткий адрес"
+        floatingLabelText="Адрес"
+        floatingLabelFixed={true}
+        hintText="Например, https://vk.com/team или просто team"
         value={this.state.screenName}
         fullWidth={true}
         onChange={this.handleScreenNameChange} />
