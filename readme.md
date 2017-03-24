@@ -32,10 +32,14 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
         * data:
             * MongoDB ObjectId;
             * user ObjectId;
+            * [VK](http://vk.com/) photo;
+            * [VK](http://vk.com/) name;
             * [VK](http://vk.com/) screen name;
         * operations (for a current user):
             * getting of all;
-            * addition of one;
+            * addition of one:
+                * by [VK](http://vk.com/) screen name;
+                * by [VK](http://vk.com/) URL;
             * deletion of one;
     * counters:
         * data:
@@ -64,6 +68,8 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
             * failure;
         * for every group:
             * displays:
+                * [VK](http://vk.com/) photo;
+                * [VK](http://vk.com/) name;
                 * [VK](http://vk.com/) screen name;
                 * counters for a last day;
             * states:
