@@ -1,6 +1,6 @@
 import {fetchGroups} from '../../actions/groups'
 import {removeGroup} from '../../actions/group_remove'
-import {addCounter} from '../../actions/counter_add'
+import {addCounter} from '../../actions/counter_add_async'
 import {connect} from 'react-redux'
 import StatefulGroupList from '../../components/stateful_group_list/StatefulGroupList'
 

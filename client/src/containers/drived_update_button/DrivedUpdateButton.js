@@ -1,4 +1,4 @@
-import {addCounter} from '../../actions/counter_add'
+import {addCounter} from '../../actions/counter_add_async'
 import {connect} from 'react-redux'
 import UpdateButton from '../../components/update_button/UpdateButton'
 

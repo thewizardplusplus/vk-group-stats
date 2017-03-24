@@ -1,4 +1,4 @@
-import {COUNTER_ADD_REQUEST, COUNTER_ADD_SUCCESS, COUNTER_ADD_FAILURE} from '../actions/counter_add'
+import {COUNTER_ADD_REQUEST, COUNTER_ADD_SUCCESS, COUNTER_ADD_FAILURE} from '../actions/counter_add_sunc'
 import {FETCHING_STATE, SUCCESS_STATE, FAILURE_STATE} from '../common/states'
 import {setCountersState, updateGroup, initialCollectionState} from './common'
 import {handleActions} from 'redux-actions'

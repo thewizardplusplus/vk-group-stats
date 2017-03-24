@@ -1,6 +1,6 @@
 import uuidV4 from 'uuid/v4'
 import {groupAddRequest, groupAddSuccess, groupAddFailure} from './group_add_sync'
-import {counterAddSuccess} from './counter_add'
+import {counterAddSuccess} from './counter_add_sunc'
 import logError from './logger'
 
 export function addGroup(screen_name) {

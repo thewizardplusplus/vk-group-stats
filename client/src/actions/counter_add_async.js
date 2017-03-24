@@ -1,13 +1,6 @@
-import {createAction} from 'redux-actions'
+import {counterAddRequest, counterAddSuccess, counterAddFailure} from './counter_add_sunc'
 import logError from './logger'
 
-export const COUNTER_ADD_REQUEST = 'COUNTER_ADD_REQUEST'
-export const COUNTER_ADD_SUCCESS = 'COUNTER_ADD_SUCCESS'
-export const COUNTER_ADD_FAILURE = 'COUNTER_ADD_FAILURE'
-
-const counterAddRequest = createAction(COUNTER_ADD_REQUEST)
-export const counterAddSuccess = createAction(COUNTER_ADD_SUCCESS)
-const counterAddFailure = createAction(COUNTER_ADD_FAILURE)
 export function addCounter(group_id) {
   return function(dispatch) {
     dispatch(counterAddRequest(group_id))
