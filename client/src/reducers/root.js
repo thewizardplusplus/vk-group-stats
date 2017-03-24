@@ -8,6 +8,7 @@ import {groupUpdate} from './group_update.js'
 import {counters} from './counters.js'
 import {counterAdd} from './counter_add.js'
 import reduceReducers from 'reduce-reducers'
+import {routerReducer} from 'react-router-redux'
 import {combineReducers} from 'redux'
 
 export const rootReducer = combineReducers({
@@ -22,4 +23,5 @@ export const rootReducer = combineReducers({
     counters,
     counterAdd
   ),
+  router: routerReducer,
 })
