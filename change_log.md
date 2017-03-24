@@ -1,5 +1,17 @@
 # Change Log
 
+## [v1.1.0-alpha.2](https://github.com/thewizardplusplus/vk-group-stats/tree/v1.1.0-alpha.2) (2017-03-24)
+
+**Closed issues:**
+
+- Display new group fields in the client if they are available [\#20](https://github.com/thewizardplusplus/vk-group-stats/issues/20)
+- Support a group update on a counter addition in the client [\#19](https://github.com/thewizardplusplus/vk-group-stats/issues/19)
+- Support a counter addition on a group addition in the client [\#18](https://github.com/thewizardplusplus/vk-group-stats/issues/18)
+- Support a group URL as a group screen name [\#17](https://github.com/thewizardplusplus/vk-group-stats/issues/17)
+- Save new group fields and add a counter on a group addition [\#16](https://github.com/thewizardplusplus/vk-group-stats/issues/16)
+- Update new group fields on a counter addition [\#15](https://github.com/thewizardplusplus/vk-group-stats/issues/15)
+- Extend the group model: add a name and a photo [\#14](https://github.com/thewizardplusplus/vk-group-stats/issues/14)
+
 ## [v1.1.0-alpha](https://github.com/thewizardplusplus/vk-group-stats/tree/v1.1.0-alpha) (2017-03-19)
 
 **Closed issues:**
