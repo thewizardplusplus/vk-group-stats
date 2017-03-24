@@ -16,8 +16,29 @@ export default class Group extends React.Component {
   }
 
   render() {
+    let header = null
+    if (
+      typeof this.props.group.name === 'undefined'
+      && typeof this.props.group.photo === 'undefined'
+    ) {
+      header = <CardHeader title={this.props.group.screen_name} />
+    } else if (typeof this.props.group.photo === 'undefined') {
+      header = <CardHeader
+        title={this.props.group.name}
+        subtitle={this.props.group.screen_name} />
+    } else if (typeof this.props.group.name === 'undefined') {
+      header = <CardHeader
+        avatar={this.props.group.photo}
+        title={this.props.group.screen_name} />
+    } else {
+      header = <CardHeader
+        avatar={this.props.group.photo}
+        title={this.props.group.name}
+        subtitle={this.props.group.screen_name} />
+    }
+
     return <Card>
-      <CardHeader title={this.props.group.screen_name} />
+      {header}
       <CardText>
         <DrivedCountersTable groupId={this.props.group._id} />
       </CardText>
