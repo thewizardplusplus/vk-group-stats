@@ -1,5 +1,6 @@
 import uuidV4 from 'uuid/v4'
 import {groupAddRequest, groupAddSuccess, groupAddFailure} from './group_add_sync'
+import {counterAddSuccess} from './counter_add'
 import logError from './logger'
 
 export function addGroup(screen_name) {
@@ -22,7 +23,11 @@ export function addGroup(screen_name) {
         if (typeof json.data !== 'undefined' && json.data) {
           dispatch(groupAddSuccess({
             fake_group_id,
-            new_group: json.data,
+            new_group: json.data.group,
+          }))
+          dispatch(counterAddSuccess({
+            group_id: json.data.group._id,
+            new_counter: json.data.counter,
           }))
         } else if (typeof json.errors !== 'undefined') {
           json.errors.forEach(logError)
