@@ -1,4 +1,5 @@
 import {counterAddRequest, counterAddSuccess, counterAddFailure} from './counter_add_sunc'
+import {groupUpdate} from './group_update'
 import logError from './logger'
 
 export function addCounter(group_id) {
@@ -12,9 +13,10 @@ export function addCounter(group_id) {
       .then(response => response.json())
       .then(json => {
         if (typeof json.data !== 'undefined' && json.data) {
+          dispatch(groupUpdate(json.data.group))
           dispatch(counterAddSuccess({
             group_id,
-            new_counter: json.data,
+            new_counter: json.data.counter,
           }))
         } else if (typeof json.errors !== 'undefined') {
           json.errors.forEach(logError)
