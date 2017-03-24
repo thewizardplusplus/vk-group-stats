@@ -1,4 +1,4 @@
-import {thunkEnhancer} from './thunk_enhancer'
+import {middlewares} from './middlewares'
 import {DevTools} from '../containers/dev_tools/DevTools'
 import {persistState} from 'redux-devtools'
 import {compose, createStore} from 'redux'
@@ -10,7 +10,7 @@ function getDebugSessionKey() {
 }
 
 const enhancer = compose(
-  thunkEnhancer,
+  middlewares,
   DevTools.instrument(),
   persistState(getDebugSessionKey())
 )
