@@ -1,5 +1,5 @@
 import {GROUP_DIALOG_OPEN, GROUP_DIALOG_CLOSE} from '../actions/group_dialog'
-import {initialDialogState} from './common'
+import {initialOpenableState} from './common'
 import {handleActions} from 'redux-actions'
 
 export const groupDialog = handleActions({
@@ -11,4 +11,4 @@ export const groupDialog = handleActions({
     ...state,
     open: false,
   }),
-}, initialDialogState)
+}, initialOpenableState)

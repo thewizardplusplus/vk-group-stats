@@ -1,5 +1,5 @@
 import {APP_DIALOG_OPEN, APP_DIALOG_CLOSE} from '../actions/app_dialog'
-import {initialDialogState} from './common'
+import {initialOpenableState} from './common'
 import {handleActions} from 'redux-actions'
 
 export const appDialog = handleActions({
@@ -11,4 +11,4 @@ export const appDialog = handleActions({
     ...state,
     open: false,
   }),
-}, initialDialogState)
+}, initialOpenableState)

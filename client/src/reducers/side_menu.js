@@ -1,5 +1,5 @@
 import {SIDE_MENU_OPEN, SIDE_MENU_CLOSE} from '../actions/side_menu'
-import {initialDialogState} from './common'
+import {initialOpenableState} from './common'
 import {handleActions} from 'redux-actions'
 
 export const sideMenu = handleActions({
@@ -11,4 +11,4 @@ export const sideMenu = handleActions({
     ...state,
     open: false,
   }),
-}, initialDialogState)
+}, initialOpenableState)

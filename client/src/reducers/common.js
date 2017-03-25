@@ -4,7 +4,7 @@ export const initialCollectionState = {
   state: SUCCESS_STATE,
   items: [],
 }
-export const initialDialogState = {
+export const initialOpenableState = {
   open: false,
 }
 
