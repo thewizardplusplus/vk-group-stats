@@ -1,4 +1,5 @@
 import {login} from './login.js'
+import {sideMenu} from './side_menu.js'
 import {appDialog} from './app_dialog.js'
 import {groupDialog} from './group_dialog.js'
 import {groups} from './groups.js'
@@ -13,6 +14,7 @@ import {combineReducers} from 'redux'
 
 export const rootReducer = combineReducers({
   login,
+  sideMenu,
   appDialog,
   groupDialog,
   groups: reduceReducers(
