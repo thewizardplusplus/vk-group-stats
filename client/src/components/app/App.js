@@ -6,10 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import {DrivedMainMenu} from '../../containers/drived_main_menu/DrivedMainMenu'
 import {DrivedGate} from '../../containers/drived_gate/DrivedGate'
 import AppBar from 'material-ui/AppBar'
-import {DrivedGroupList} from '../../containers/drived_group_list/DrivedGroupList'
-import {DrivedGroupDialog} from '../../containers/drived_group_dialog/DrivedGroupDialog'
-import {DrivedAppDialog} from '../../containers/drived_app_dialog/DrivedAppDialog'
-import {DrivedUpdateButton} from '../../containers/drived_update_button/DrivedUpdateButton'
+import Router from '../../containers/router/Router'
 import './app.css'
 
 export default class App extends React.Component {
@@ -39,12 +36,7 @@ export default class App extends React.Component {
             showMenuIconButton={false}
             iconElementRight={<DrivedMainMenu />} />
           <DrivedGate>
-            <div>
-              <DrivedGroupList />
-              <DrivedGroupDialog />
-              <DrivedAppDialog />
-              <DrivedUpdateButton />
-            </div>
+            <Router />
           </DrivedGate>
         </div>
       </MuiThemeProvider>
