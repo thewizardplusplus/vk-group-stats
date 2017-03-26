@@ -1,14 +1,17 @@
 import React from 'react'
 import IconButton from '../icon_button/IconButton'
+import IconicButton from '../iconic_button/IconicButton'
 import Icon from '../icon/Icon'
-import IconicButton from 'material-ui/IconButton'
 import IconMenu from 'material-ui/IconMenu'
 import MenuItem from 'material-ui/MenuItem'
 import Divider from 'material-ui/Divider'
 
 export default class MainMenu extends React.Component {
+  // this name required by the AppBar component for a correct styles processing
+  static muiName = 'IconButton'
   static propTypes = {
     isLogged: React.PropTypes.bool.isRequired,
+    iconStyle: React.PropTypes.object,
     onRefresh: React.PropTypes.func.isRequired,
     onGroupAdd: React.PropTypes.func.isRequired,
     onAbout: React.PropTypes.func.isRequired,
@@ -27,9 +30,9 @@ export default class MainMenu extends React.Component {
     }
 
     return <IconMenu
-      iconButtonElement={
-        <IconicButton><Icon name="more_vert" /></IconicButton>
-      }>
+      iconButtonElement={<IconicButton
+        icon="more_vert"
+        iconStyle={this.props.iconStyle} />}>
       <MenuItem
         leftIcon={<Icon name="refresh" />}
         primaryText="Перезагрузить"

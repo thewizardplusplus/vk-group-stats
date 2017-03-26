@@ -1,15 +1,18 @@
 import React from 'react'
-import IconButton from 'material-ui/IconButton'
-import Icon from '../icon/Icon'
+import IconicButton from '../iconic_button/IconicButton'
 
 export default class SideMenuButton extends React.Component {
+  // this name required by the AppBar component for a correct styles processing
+  static muiName = 'IconButton'
   static propTypes = {
-    onClick: React.PropTypes.func.isRequired,
+    iconStyle: React.PropTypes.object,
+    onClick: React.PropTypes.func,
   }
 
   render() {
-    return <IconButton onTouchTap={this.props.onClick}>
-      <Icon name="menu" />
-    </IconButton>
+    return <IconicButton
+      icon="menu"
+      iconStyle={this.props.iconStyle}
+      onTouchTap={this.props.onClick} />
   }
 }

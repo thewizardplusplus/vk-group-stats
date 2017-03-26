@@ -2,8 +2,7 @@ import React from 'react'
 import Dialog from 'material-ui/Dialog'
 import IconButton from '../icon_button/IconButton'
 import TextField from 'material-ui/TextField'
-import Icon from '../icon/Icon'
-import IconicButton from 'material-ui/IconButton'
+import IconicButton from '../iconic_button/IconicButton'
 import './group_dialog.css'
 
 export default class GroupDialog extends React.Component {
@@ -66,9 +65,7 @@ export default class GroupDialog extends React.Component {
         value={this.state.screenName}
         fullWidth={true}
         onChange={this.handleScreenNameChange} />
-      <IconicButton onTouchTap={this.handleScreenNameReset}>
-        <Icon name="close" />
-      </IconicButton>
+      <IconicButton icon="close" onTouchTap={this.handleScreenNameReset} />
     </Dialog>
   }
 }
