@@ -4,12 +4,6 @@ import {appDialogOpen} from '../../actions/app_dialog'
 import {connect} from 'react-redux'
 import MainMenu from '../../components/main_menu/MainMenu'
 
-function mapStateToProps(state) {
-  return {
-    isLogged: state.login.isLogged,
-  }
-}
-
 function mapDispatchToProps(dispatch) {
   return {
     onRefresh() {
@@ -25,6 +19,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export const DrivedMainMenu = connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(MainMenu)
