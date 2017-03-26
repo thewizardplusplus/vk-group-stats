@@ -19,9 +19,6 @@
     "sideMenu": {
       "$ref": "#/definitions/openable"
     },
-    "appDialog": {
-      "$ref": "#/definitions/openable"
-    },
     "groupDialog": {
       "$ref": "#/definitions/openable"
     },
@@ -78,7 +75,6 @@
   "required": [
     "login",
     "sideMenu",
-    "appDialog",
     "groupDialog",
     "groups"
   ],
