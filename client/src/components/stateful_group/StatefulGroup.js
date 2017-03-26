@@ -17,7 +17,10 @@ export default class StatefulGroup extends React.Component {
   }
 
   render() {
-    return <StatefulBlock state={this.props.state}>
+    return <StatefulBlock
+      state={this.props.state}
+      additionalBlocksNumber={1}
+      hideRootAdditionalBlock={false}>
       <Group
         group={this.props.group}
         onUpdate={this.props.onUpdate}

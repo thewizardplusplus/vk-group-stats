@@ -21,7 +21,7 @@ export default class StatefulCountersTable extends React.Component {
   }
 
   render() {
-    return <StatefulBlock state={this.props.state} useAdditionalBlocks={false}>
+    return <StatefulBlock state={this.props.state} additionalBlocksNumber={0}>
       <CountersTable counters={this.props.counters} />
     </StatefulBlock>
   }
