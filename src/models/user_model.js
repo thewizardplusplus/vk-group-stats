@@ -14,4 +14,13 @@ export const user_model = mongoose.model('user', new mongoose.Schema({
       },
     },
   },
+  photo: {
+    type: String,
+  },
+  name: {
+    type: String,
+  },
+  screen_name: {
+    type: String,
+  },
 }))
