@@ -16,11 +16,14 @@
         "isLogged"
       ]
     },
+    "sideMenu": {
+      "$ref": "#/definitions/openable"
+    },
     "appDialog": {
-      "$ref": "#/definitions/dialog"
+      "$ref": "#/definitions/openable"
     },
     "groupDialog": {
-      "$ref": "#/definitions/dialog"
+      "$ref": "#/definitions/openable"
     },
     "groups": {
       "type": "object",
@@ -73,12 +76,14 @@
     }
   },
   "required": [
+    "login",
+    "sideMenu",
     "appDialog",
     "groupDialog",
     "groups"
   ],
   "definitions": {
-    "dialog": {
+    "openable": {
       "type": "object",
       "properties": {
         "open": {
