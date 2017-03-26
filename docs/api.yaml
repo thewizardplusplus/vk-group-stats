@@ -240,6 +240,12 @@ definitions:
       vk_id:
         type: integer
         minimum: 0
+      photo:
+        type: string
+      name:
+        type: string
+      screen_name:
+        type: string
     required:
     - _id
     - vk_id
