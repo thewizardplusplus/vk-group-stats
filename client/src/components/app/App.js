@@ -3,9 +3,9 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import {DrivedMainMenu} from '../../containers/drived_main_menu/DrivedMainMenu'
+import {DrivedAppBar} from '../../containers/drived_app_bar/DrivedAppBar'
 import {DrivedGate} from '../../containers/drived_gate/DrivedGate'
-import AppBar from 'material-ui/AppBar'
+import {DrivedSideMenu} from '../../containers/drived_side_menu/DrivedSideMenu'
 import Router from '../../containers/router/Router'
 import './app.css'
 
@@ -31,12 +31,12 @@ export default class App extends React.Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
-          <AppBar
-            title="Статистика сообществ ВКонтакте"
-            showMenuIconButton={false}
-            iconElementRight={<DrivedMainMenu />} />
+          <DrivedAppBar />
           <DrivedGate>
-            <Router />
+            <div>
+              <DrivedSideMenu />
+              <Router />
+            </div>
           </DrivedGate>
         </div>
       </MuiThemeProvider>
