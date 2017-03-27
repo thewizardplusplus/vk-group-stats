@@ -165,6 +165,25 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/error'
+    post:
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/user'
+            required:
+            - data
+        401:
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/error'
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/error'
 parameters:
   group_id:
     name: group_id
