@@ -12,18 +12,18 @@ export function init_authentication() {
     clientSecret: app_secret,
     callbackURL: app_redirect_uri,
   }, (access_token, refresh_token, parameters, profile, done_handler) => {
-    const query = {
+    new user_model({
       vk_id: profile.id,
-    }
-    user_model
-      .findOneAndUpdate(query, query, {
-        upsert: true,
-      })
-      .then(user => {
+    })
+      .update((error, user) => {
+        if (error !== null) {
+          next_handler(error)
+          return
+        }
+
         logger.info(`user ${user.vk_id} logged into the app`)
         done_handler(null, user)
       })
-      .catch(done_handler)
   }))
   passport.serializeUser((user, done_handler) => {
     done_handler(null, user.id)
