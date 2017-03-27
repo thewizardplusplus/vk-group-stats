@@ -63,16 +63,3 @@ group_schema.methods.update = function(done_handler) {
 }
 
 export const group_model = mongoose.model('group', group_schema)
-
-export function make_group_update_handler(response, next_handler) {
-  return (error, data) => {
-    if (error !== null) {
-      next_handler(error)
-      return
-    }
-
-    response.json({
-      data,
-    })
-  }
-}

@@ -1,7 +1,8 @@
 import express from 'express'
 import {check_authentication, validate_request} from '../utils/errors'
 import {counter_model} from '../models/counter_model'
-import {group_model, make_group_update_handler} from '../models/group_model'
+import {group_model} from '../models/group_model'
+import {make_update_handler} from '../models/utils'
 
 const all_counters_router = express.Router()
 all_counters_router.param('group_id', (request, response, next_handler) => {
@@ -47,7 +48,7 @@ all_counters_router.route('/groups/:group_id/counters')
   .post(check_authentication, (request, response, next_handler) => {
     group_model
       .findById(request.params.group_id)
-      .then(group => group.update(make_group_update_handler(
+      .then(group => group.update(make_update_handler(
         response,
         next_handler
       )))
