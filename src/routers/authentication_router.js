@@ -10,7 +10,7 @@ authentication_router
     failureRedirect: '/',
   }))
   .get('/logout', (request, response) => {
-    logger.info(`user ${request.user.id} logged out of the app`)
+    logger.info(`user ${request.user.vk_id} logged out of the app`)
     request.logout()
 
     response.redirect('/')

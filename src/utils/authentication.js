@@ -20,7 +20,7 @@ export function init_authentication() {
         upsert: true,
       })
       .then(user => {
-        logger.info(`user ${user.id} logged into the app`)
+        logger.info(`user ${user.vk_id} logged into the app`)
         done_handler(null, user)
       })
       .catch(done_handler)
