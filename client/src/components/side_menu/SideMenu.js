@@ -28,6 +28,10 @@ export default class SideMenu extends React.Component {
         primaryText="Главная"
         onTouchTap={() => this.routeTo('/')} />
       <MenuItem
+        leftIcon={<Icon name="person" />}
+        primaryText="Профиль"
+        onTouchTap={() => this.routeTo('/profile')} />
+      <MenuItem
         leftIcon={<Icon name="info_outline" />}
         primaryText="О сервисе"
         onTouchTap={() => this.routeTo('/about')} />
