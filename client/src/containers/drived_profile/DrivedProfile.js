@@ -1,3 +1,4 @@
+import {updateUser} from '../../actions/user_update'
 import {connect} from 'react-redux'
 import StatefulProfile from '../../components/stateful_profile/StatefulProfile'
 
@@ -11,7 +12,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onUpdate() {
-      console.log('Not yet implemented.')
+      dispatch(updateUser())
     },
   }
 }
