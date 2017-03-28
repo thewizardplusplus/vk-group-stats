@@ -22,7 +22,13 @@ all_counters_router.route('/groups/:group_id/counters')
       )
       .optional()
       .isDate()
+    request
+      .checkQuery('additional_counter', 'parameter must be a boolean')
+      .optional()
+      .isBoolean()
+
     request.sanitizeQuery('start_timestamp').toDate()
+    request.sanitizeQuery('additional_counter').toBoolean()
 
     validate_request(request, next_handler)
   }, (request, response, next_handler) => {
