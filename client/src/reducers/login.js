@@ -11,6 +11,10 @@ export const login = handleActions({
     ...state,
     state: SUCCESS_STATE,
     isLogged: action.payload !== null,
+    user: {
+      state: SUCCESS_STATE,
+      data: action.payload,
+    },
   }),
   [LOGIN_FAILURE]: (state, action) => ({
     ...state,
