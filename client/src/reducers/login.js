@@ -1,5 +1,6 @@
 import {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE} from '../actions/login'
 import {FETCHING_STATE, SUCCESS_STATE, FAILURE_STATE} from '../common/states'
+import {initialLoginState} from './common'
 import {handleActions} from 'redux-actions'
 
 export const login = handleActions({
@@ -20,7 +21,4 @@ export const login = handleActions({
     ...state,
     state: FAILURE_STATE,
   }),
-}, {
-  state: SUCCESS_STATE,
-  isLogged: false,
-})
+}, initialLoginState)

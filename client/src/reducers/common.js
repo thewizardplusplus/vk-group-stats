@@ -7,6 +7,10 @@ export const initialCollectionState = {
 export const initialOpenableState = {
   open: false,
 }
+export const initialLoginState = {
+  state: SUCCESS_STATE,
+  isLogged: false,
+}
 
 export function updateGroup(groups, group_id, group_handler) {
   return groups.map(group => {
