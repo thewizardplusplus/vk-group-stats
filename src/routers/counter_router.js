@@ -4,6 +4,17 @@ import {counter_model} from '../models/counter_model'
 import {group_model} from '../models/group_model'
 import {make_update_handler} from '../models/utils'
 
+function request_counters(db_request, response, next_handler) {
+  db_request
+    .sort({
+      timestamp: 'descending',
+    })
+    .then(counters => response.json({
+      data: counters,
+    }))
+    .catch(next_handler)
+}
+
 const all_counters_router = express.Router()
 all_counters_router.param('group_id', (request, response, next_handler) => {
   request.checkParams('group_id', 'parameter is required').notEmpty()
@@ -32,24 +43,33 @@ all_counters_router.route('/groups/:group_id/counters')
 
     validate_request(request, next_handler)
   }, (request, response, next_handler) => {
-    const query = {
+    const full_query = {
       group_id: request.params.group_id,
     }
-    if (request.query.start_timestamp instanceof Date) {
-      query.timestamp = {
+    const short_query = Object.assign({}, full_query, {
+      timestamp: {
         $gte: request.query.start_timestamp,
-      }
+      },
+    })
+    if (typeof request.query.start_timestamp === 'undefined') {
+      request_counters(counter_model.find(full_query), response, next_handler)
+    } else if (
+      typeof request.query.additional_counter === 'undefined'
+      || !request.query.additional_counter
+    ) {
+      request_counters(counter_model.find(short_query), response, next_handler)
+    } else {
+      counter_model
+        .count(short_query)
+        .then(counters_number => request_counters(
+          counter_model
+            .find(full_query)
+            .limit(counters_number + 1),
+          response,
+          next_handler
+        ))
+        .catch(next_handler)
     }
-
-    counter_model
-      .find(query)
-      .sort({
-        timestamp: 'descending',
-      })
-      .then(counters => response.json({
-        data: counters,
-      }))
-      .catch(next_handler)
   })
   .post(check_authentication, (request, response, next_handler) => {
     group_model
