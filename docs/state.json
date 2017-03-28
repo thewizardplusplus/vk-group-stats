@@ -9,6 +9,21 @@
         },
         "isLogged": {
           "type": "boolean"
+        },
+        "user": {
+          "type": "object",
+          "properties": {
+            "state": {
+              "$ref": "#/definitions/state"
+            },
+            "data": {
+              "$ref": "#/definitions/user"
+            }
+          },
+          "required": [
+            "state",
+            "data"
+          ]
         }
       },
       "required": [
@@ -131,8 +146,7 @@
           "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.\\d{3}Z$"
         },
         "value": {
-          "type": "integer",
-          "minimum": 0
+          "$ref": "#/definitions/positive-integer"
         },
         "delta": {
           "type": "integer"
@@ -144,11 +158,39 @@
         "value"
       ]
     },
+    "user": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "$ref": "#/definitions/mongodb-objectid"
+        },
+        "vk_id": {
+          "$ref": "#/definitions/positive-integer"
+        },
+        "photo": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "screen_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "_id",
+        "vk_id"
+      ]
+    },
     "mongodb-objectid": {
       "type": "string",
       "pattern": "^[0-9A-Fa-f]+$",
       "minLength": 24,
       "maxLength": 24
+    },
+    "positive-integer": {
+      "type": "integer",
+      "minimum": 0
     }
   }
 }
