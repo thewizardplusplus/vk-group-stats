@@ -24,6 +24,7 @@ group_schema.methods.update = function(done_handler) {
     .call('groups.getById', {
       group_id: this.screen_name,
       fields: 'members_count',
+      lang: 'ru',
     })
     .then(response => {
       logger.info(`group ${this.id} requested VK API`)

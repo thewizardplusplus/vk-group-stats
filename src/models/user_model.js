@@ -31,6 +31,7 @@ user_schema.methods.update = function(done_handler) {
     .call('users.get', {
       user_ids: this.vk_id,
       fields: 'nickname, screen_name, photo_50',
+      lang: 'ru',
     })
     .then(response => {
       logger.info(`user ${this.vk_id} requested VK API`)
