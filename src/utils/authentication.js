@@ -38,7 +38,7 @@ export function init_authentication() {
 
 const fake_user = new user_model({
   _id: new mongoose.Types.ObjectId('507f1f77bcf86cd799439011'),
-  vk_id: 0,
+  vk_id: 13605040,
 })
 export function fake_authentication(request, response, next_handler) {
   request.user = fake_user
