@@ -6,6 +6,9 @@ import SideMenu from '../../components/side_menu/SideMenu'
 function mapStateToProps(state) {
   return {
     open: state.sideMenu.open,
+    route: state.router.location !== null
+      ? state.router.location.pathname
+      : undefined
   }
 }
 
