@@ -9,6 +9,7 @@ export default class MainMenu extends React.Component {
   // this name required by the AppBar component for a correct styles processing
   static muiName = 'IconButton'
   static propTypes = {
+    isGroupPage: React.PropTypes.bool.isRequired,
     iconStyle: React.PropTypes.object,
     onRefresh: React.PropTypes.func.isRequired,
     onGroupAdd: React.PropTypes.func.isRequired,
@@ -22,10 +23,12 @@ export default class MainMenu extends React.Component {
       <MenuItem
         leftIcon={<Icon name="refresh" />}
         primaryText="Перезагрузить"
+        disabled={!this.props.isGroupPage}
         onTouchTap={this.props.onRefresh} />
       <MenuItem
         leftIcon={<Icon name="add" />}
         primaryText="Добавить группу"
+        disabled={!this.props.isGroupPage}
         onTouchTap={this.props.onGroupAdd} />
       <Divider />
       <MenuItem
