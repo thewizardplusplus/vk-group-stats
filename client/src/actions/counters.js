@@ -35,8 +35,9 @@ export function fetchCounters(group_id) {
       .subtract(start_timestamp_shift, 'seconds')
       .format('YYYY-MM-DDTHH:mm:ssZZ')
     return fetch(
-        `/api/v1/groups/${group_id}/counters?`
-          + `start_timestamp=${encodeURIComponent(start_timestamp)}`,
+        `/api/v1/groups/${group_id}/counters`
+          + `?start_timestamp=${encodeURIComponent(start_timestamp)}`
+          + '&additional_counter=true',
         {
           credentials: 'same-origin',
         }
