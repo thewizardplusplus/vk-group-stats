@@ -24,9 +24,15 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
         * data:
             * MongoDB ObjectId;
             * [VK](http://vk.com/) ID;
+            * [VK](http://vk.com/) photo;
+            * name ([VK](http://vk.com/) first name, [VK](http://vk.com/) nickname and [VK](http://vk.com/) last name separated by a whitespace symbol);
+            * [VK](http://vk.com/) screen name;
         * operations:
             * getting of a current user;
-            * automatically addition on an authentication;
+            * update of a data via [VK](http://vk.com/) API;
+            * automatically on an authentication:
+                * addition;
+                * update of a data via [VK](http://vk.com/) API;
         * support of a fake user on a skipping of an authentication;
     * groups:
         * data:
@@ -40,6 +46,7 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
             * addition of one:
                 * by [VK](http://vk.com/) screen name;
                 * by [VK](http://vk.com/) URL;
+            * update of one data via [VK](http://vk.com/) API;
             * deletion of one;
     * counters:
         * data:
@@ -50,7 +57,8 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
         * operations (for a specified group):
             * getting of all in a descending order;
             * getting of all in a descending order beginning with a specified timestamp;
-            * addition of one (automatically via [VK](http://vk.com/) API);
+            * getting of an additional counter after all requested counters;
+            * addition of one via [VK](http://vk.com/) API;
             * deletion of all;
     * automatically addition of counters via [VK](http://vk.com/) API for all added groups by schedule;
 * front-end:
@@ -59,32 +67,44 @@ Service for a collecting of a [VK](http://vk.com/) groups stats.
         * material:
             * dark;
             * light;
-    * group list:
-        * displays:
-            * groups;
-        * states:
-            * fetching;
-            * success;
-            * failure;
-        * for every group:
+    * pages:
+        * group list:
             * displays:
-                * [VK](http://vk.com/) photo;
-                * [VK](http://vk.com/) name;
-                * [VK](http://vk.com/) screen name;
-                * counters for a last day;
+                * groups;
             * states:
                 * fetching;
                 * success;
                 * failure;
-            * for every counter:
+            * for every group:
                 * displays:
-                    * timestamp;
-                    * number of subscribers;
-                    * delta compared to a previous;
-    * dialogs:
-        * add group dialog;
-        * about app dialog;
-    * group list refreshing;
+                    * [VK](http://vk.com/) photo;
+                    * [VK](http://vk.com/) name;
+                    * [VK](http://vk.com/) screen name;
+                    * all counters for a last day and one additional counter after all rest;
+                * states:
+                    * fetching;
+                    * success;
+                    * failure;
+                * for every counter:
+                    * displays:
+                        * timestamp;
+                        * number of subscribers;
+                        * delta compared to a previous (optionally);
+            * add group dialog;
+            * simultaneously for all groups:
+                * reloading;
+                * update;
+        * user profile:
+            * displays:
+                * [VK](http://vk.com/) photo;
+                * name ([VK](http://vk.com/) first name, [VK](http://vk.com/) nickname and [VK](http://vk.com/) last name separated by a whitespace symbol);
+                * [VK](http://vk.com/) screen name;
+                * [VK](http://vk.com/) ID (optionally);
+            * states:
+                * fetching;
+                * success;
+                * failure;
+        * info about app;
     * authentication:
         * login;
         * logout.
