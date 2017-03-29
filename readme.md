@@ -289,6 +289,14 @@ Main menu (unauthorized)
 
 Main menu (authorized)
 
+![Side menu](screenshots/screenshot_13.png)
+
+Side menu
+
+![User profile](screenshots/screenshot_14.png)
+
+User profile
+
 ## License
 
 The MIT License (MIT)
