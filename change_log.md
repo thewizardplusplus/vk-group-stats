@@ -1,5 +1,30 @@
 # Change Log
 
+## [v1.1.0](https://github.com/thewizardplusplus/vk-group-stats/tree/v1.1.0) (2017-03-29)
+
+**Closed issues:**
+
+- Force RU lang in VK API requests [\#38](https://github.com/thewizardplusplus/vk-group-stats/issues/38)
+- Request additional counters [\#37](https://github.com/thewizardplusplus/vk-group-stats/issues/37)
+- Support a requesting of an additional counter for a range [\#36](https://github.com/thewizardplusplus/vk-group-stats/issues/36)
+- Disable &laquo;Reload&raquo; and &laquo;Add group&raquo; menu items on not groups pages [\#35](https://github.com/thewizardplusplus/vk-group-stats/issues/35)
+- Add a profile update [\#34](https://github.com/thewizardplusplus/vk-group-stats/issues/34)
+- Add a profile view [\#33](https://github.com/thewizardplusplus/vk-group-stats/issues/33)
+- Add a profile page [\#32](https://github.com/thewizardplusplus/vk-group-stats/issues/32)
+- Update of new user fields on a login [\#31](https://github.com/thewizardplusplus/vk-group-stats/issues/31)
+- Support an update of new user fields [\#30](https://github.com/thewizardplusplus/vk-group-stats/issues/30)
+- Extend the user model: add a name, a screen name and a photo [\#29](https://github.com/thewizardplusplus/vk-group-stats/issues/29)
+- Add additional margins to single cards [\#28](https://github.com/thewizardplusplus/vk-group-stats/issues/28)
+- Move a login processing from the MainMenu component to the AppBar component [\#27](https://github.com/thewizardplusplus/vk-group-stats/issues/27)
+- Remove the about app dialog [\#25](https://github.com/thewizardplusplus/vk-group-stats/issues/25)
+- Add a side menu for a routes navigation [\#22](https://github.com/thewizardplusplus/vk-group-stats/issues/22)
+- Separate the about info to a single page [\#21](https://github.com/thewizardplusplus/vk-group-stats/issues/21)
+
+**Fixed bugs:**
+
+- Use theme styles for the main menu button [\#24](https://github.com/thewizardplusplus/vk-group-stats/issues/24)
+- Use theme styles for the login button [\#23](https://github.com/thewizardplusplus/vk-group-stats/issues/23)
+
 ## [v1.1.0-alpha.2](https://github.com/thewizardplusplus/vk-group-stats/tree/v1.1.0-alpha.2) (2017-03-24)
 
 **Closed issues:**
